@@ -97,7 +97,7 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: hexo-theme-cosy
+theme: cosy
 
 algolia:
   appId: Chose_B
@@ -120,3 +120,19 @@ algolia:
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: ''
+
+# 关闭hexo默认语法高亮
+highlight:
+  enable: false
+  line_number: true
+  auto_detect: false
+  tab_replace: ""
+  wrap: true
+  hljs: false
+
+prismjs:
+  enable: true
+  preprocess: true
+  line_number: true
+  line_threshold: 0
+  tab_replace: ""
