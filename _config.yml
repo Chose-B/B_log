@@ -4,7 +4,7 @@
 
 # Site
 title: B_log
-subtitle: ''
+subtitle: 'B'
 description: ''
 keywords: ''
 author: Chose___B
@@ -13,7 +13,7 @@ timezone: 'Asia/Shanghai'
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: http://Chose_B.github.io/B_log
+url: http://Chose_B.cn
 permalink: :category/:post_title/
 permalink_defaults:
 pretty_urls:
@@ -97,7 +97,24 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: landscape
+theme: hexo-theme-cosy
+
+algolia:
+  appId: Chose_B
+  apiKey: Chose_B
+  adminApiKey: Chose_B
+  SearchOnlyAPIKey: Chose_B
+  chunkSize: 5000
+  indexName: algolia.index
+  fields:
+    - content
+    - excerpt:strip
+    - categories
+    - title
+    - permalink
+    - slug
+    - tags
+    - title
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
