@@ -1,6 +1,6 @@
 ---
 title: 个人简历
-layout: resume
+layout: cosy-resume
 avatar: /img/avatar.png
 name: Chose_B
 role: Full Stack

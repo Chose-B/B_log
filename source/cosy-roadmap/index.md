@@ -1,6 +1,6 @@
 ---
 title: 时间线
-layout: roadmap
+layout: cosy-roadmap
 initYear: 2024
 years:
   2024:

@@ -90,7 +90,7 @@ ignore:
 
 # Extensions
 ## Plugins: https://hexo.io/plugins/
-## Themes: https://hexo.io/themes/
+## Themes: https://hexo.io/themes/ 
 theme: cosy
 
 algolia:
@@ -114,11 +114,5 @@ algolia:
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: ''
-
-nav_meta:
-  archives: svg
-  cosy-roadmap: svg
-  cosy-resume: svg
-  cosy-preference: svg
 
 motto: false
