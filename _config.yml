@@ -5,7 +5,7 @@
 # Site
 title: B_log
 subtitle: 'B'
-description: ''
+description: 'VEX'
 keywords: ''
 author: Chose___B
 language: zh-CN
@@ -43,20 +43,12 @@ render_drafts: false
 post_asset_folder: false
 relative_link: false
 future: true
-highlight:
-  enable: false
-  line_number: true
-  auto_detect: false
-  tab_replace: ""
-  wrap: true
-  hljs: false
-
+syntax_highlighter: prismjs
 prismjs:
-  enable: true
   preprocess: true
   line_number: true
   line_threshold: 0
-  tab_replace: ""
+  tab_replace: ''
 
 # Home page setting
 # path: Root path for your blogs index page. (default = '')
@@ -127,3 +119,6 @@ nav_meta:
   archives: svg
   cosy-roadmap: svg
   cosy-resume: svg
+  cosy-preference: svg
+
+motto: false
