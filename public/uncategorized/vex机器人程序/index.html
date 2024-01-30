@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>
+    VEX机器人程序
+  </title>
+  <meta name="description" content="VEX">
+  <meta name="keywords" content="">
+  <meta name="author" content="Chose___B">
+  <link rel="canonical" href="http://chose_b.cn/uncategorized/vex%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%A8%8B%E5%BA%8F/">
+  
+  
+  <link rel="icon" type="image/svg" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 10l7.383 7.418c.823.82.823 2.148 0 2.967a2.11 2.11 0 0 1-2.976 0L10 13"></path><path d="M6.293 15.293l-2.586-2.586a1 1 0 0 1 0-1.414l7.586-7.586a1 1 0 0 1 1.414 0l2.586 2.586a1 1 0 0 1 0 1.414l-7.586 7.586a1 1 0 0 1-1.414 0z"></path></g></svg>'>
+  
+  
+  
+<link rel="stylesheet" href="/css/b4c95347.css">
+
+  <script>window.i18n = {"tip-status-done":"完成","tip-status-default":"全部","tip-status-todo":"计划","tip-status-doing":"进行","tip-status-other":"其他","text-select":"选择","text-move":"移动","text-esc":"退出","January":"一月","February":"二月","March":"三月","April":"四月","May":"五月","June":"六月","July":"七月","August":"八月","September":"九月","October":"十月","November":"十一月","December":"十二月"}</script>
+<meta name="generator" content="Hexo 7.1.1"></head>
+
+<body id="app">
+  <aside id="aside-box" class="left-aside">
+    <div class="header">
+      
+<link rel="stylesheet" href="/css/61875ce9.css">
+
+<div class="profile">
+  <a class="badge" href="/">
+    <span>Hi</span>
+    <span>Chose___B</span>
+  </a>
+  <cosy-tooltip id="left-aside-button" placement="right">
+    <span slot="content">
+      <span>显示 / 隐藏 左侧导航</span>
+      <cosy-short-key>[</cosy-short-key>
+    </span>
+    <cosy-icon>
+      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 20 20">
+        <g fill="none">
+          <path d="M16 4c1.104-.019 2 .896 2 2v8a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h12zm1 2a1 1 0 0 0-1-1h-2.995v10H16a1 1 0 0 0 1-1V6zm-4.995 9V5H4.001a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8.004z" fill="currentColor"></path>
+        </g>
+      </svg>
+    </cosy-icon>
+  </cosy-tooltip>
+</div>
+
+<script src="/js/e0a67917.js"></script>
+
+      
+
+
+<cosy-search id="post-search" placeholder="搜索">
+  <div slot="short-key">
+    <cosy-short-key>⌘</cosy-short-key>
+    <cosy-short-key>K</cosy-short-key>
+  </div>
+</cosy-search>
+
+
+<script>
+  window.algolia = {
+    appId: "Chose_B",
+    SearchOnlyAPIKey: "Chose_B"
+  }
+</script>
+
+
+<script src="/js/62d6af47.js"></script>
+
+    </div>
+    <div class="aside-category">
+      
+<link rel="stylesheet" href="/css/db04a759.css">
+
+
+<nav class="category-nav cosy-scrollbar">
+  <ul><li data-path="archives">
+        <a href="/archives">
+          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 20 20"><g fill="none"><path d="M3.5 3A1.5 1.5 0 0 0 2 4.5v4A1.5 1.5 0 0 0 3.5 10h9A1.5 1.5 0 0 0 14 8.5v-4A1.5 1.5 0 0 0 12.5 3h-9zM3 4.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5v-4zm.5 6.5A1.5 1.5 0 0 0 2 12.5v4A1.5 1.5 0 0 0 3.5 18h9a1.5 1.5 0 0 0 1.5-1.5v-4a1.5 1.5 0 0 0-1.5-1.5h-9zM3 12.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5v-4zm14-.063a2.003 2.003 0 0 1-2.5-1.937A2 2 0 0 1 16 8.563a2.005 2.005 0 0 1 1 0a2 2 0 0 1 0 3.874zM16.5 3a.5.5 0 0 1 .5.5v4.041a3.02 3.02 0 0 0-1 0V3.5a.5.5 0 0 1 .5-.5zm0 10.5c-.17 0-.337-.014-.5-.041V17.5a.5.5 0 0 0 1 0v-4.041c-.163.027-.33.041-.5.041z" fill="currentColor"></path></g></svg>
+          <div class="ellipsis">归档</div>
+        </a>
+      </li><li data-path="cosy-roadmap">
+        <a href="/cosy-roadmap">
+          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 20 20"><g fill="none"><path d="M9.384 2a1 1 0 0 0-.966.742L4.616 17H2.5a.5.5 0 0 0 0 1h15a.5.5 0 0 0 0-1h-2.116L11.582 2.742A1 1 0 0 0 10.616 2H9.384zM5.651 17l.8-3H11.5a.5.5 0 0 0 0-1H6.717l.534-2H10.5a.5.5 0 0 0 0-1H7.517l1.867-7h1.232l3.733 14H5.651z" fill="currentColor"></path></g></svg>
+          <div class="ellipsis">路线图</div>
+        </a>
+      </li><li data-path="cosy-resume">
+        <a href="/cosy-resume">
+          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 20 20"><g fill="none"><path d="M8.5 4.498a1.5 1.5 0 1 1 3 0a1.5 1.5 0 0 1-3 0zm1.5-2.5a2.5 2.5 0 0 0-2.43 3.086L5.471 4.15a1.761 1.761 0 0 0-2.317.88c-.4.882-.008 1.917.877 2.31L7 8.662v2.287l-1.877 4.645a1.75 1.75 0 0 0 3.245 1.311l1.556-3.849a.073.073 0 0 1 .028-.038a.086.086 0 0 1 .046-.012c.02 0 .035.005.046.012a.074.074 0 0 1 .028.038l1.555 3.849a1.75 1.75 0 0 0 3.245-1.311L13 10.96V8.662l2.968-1.322a1.74 1.74 0 0 0 .877-2.31a1.761 1.761 0 0 0-2.317-.88l-2.097.934a2.5 2.5 0 0 0-2.43-3.086zM4.065 5.444a.761.761 0 0 1 1-.38l3.918 1.744a2.5 2.5 0 0 0 2.034 0l3.918-1.744a.761.761 0 0 1 1 .38a.739.739 0 0 1-.373.983l-2.969 1.321a1 1 0 0 0-.593.914v2.298a1 1 0 0 0 .073.375l1.872 4.633a.75.75 0 0 1-1.39.562l-1.556-3.849c-.364-.9-1.639-.9-2.003 0l-1.555 3.85a.75.75 0 1 1-1.39-.562l1.876-4.646A1 1 0 0 0 8 10.95V8.662a1 1 0 0 0-.593-.914L4.438 6.427a.739.739 0 0 1-.373-.983z" fill="currentColor"></path></g></svg>
+          <div class="ellipsis">简历</div>
+        </a>
+      </li></ul>
+  <ul></ul>
+</nav>
+
+
+<script src="/js/da8f6845.js"></script>
+
+    </div>
+    <div class="bottom">
+      <cosy-tooltip id="button-preference" placement="right">
+        <span slot="content">
+          <span>偏好</span>
+          <cosy-short-key>⌘</cosy-short-key>
+          <cosy-short-key>p</cosy-short-key>
+        </span>
+        <cosy-icon bordered id="button-about-cosy-theme">
+          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 16 16">
+            <g fill="none">
+              <path d="M8 6a2 2 0 1 0 0 4a2 2 0 0 0 0-4zM7 8a1 1 0 1 1 2 0a1 1 0 0 1-2 0zm3.618-3.602a.708.708 0 0 1-.824-.567l-.26-1.416a.354.354 0 0 0-.275-.282a6.072 6.072 0 0 0-2.519 0a.354.354 0 0 0-.275.282l-.259 1.416a.71.71 0 0 1-.936.538l-1.359-.484a.355.355 0 0 0-.382.095c-.569.627-1 1.367-1.262 2.173a.352.352 0 0 0 .108.378l1.102.931a.704.704 0 0 1 0 1.076l-1.102.931a.352.352 0 0 0-.108.378A5.986 5.986 0 0 0 3.53 12.02a.355.355 0 0 0 .382.095l1.36-.484a.708.708 0 0 1 .936.538l.258 1.416c.026.14.135.252.275.281a6.075 6.075 0 0 0 2.52 0a.353.353 0 0 0 .274-.281l.26-1.416a.71.71 0 0 1 .936-.538l1.359.484c.135.048.286.01.382-.095c.569-.627 1-1.367 1.262-2.173a.352.352 0 0 0-.108-.378l-1.102-.931a.703.703 0 0 1 0-1.076l1.102-.931a.352.352 0 0 0 .108-.378A5.985 5.985 0 0 0 12.47 3.98a.355.355 0 0 0-.382-.095l-1.36.484a.71.71 0 0 1-.111.03zm-6.62.58l.937.333a1.71 1.71 0 0 0 2.255-1.3l.177-.97a5.105 5.105 0 0 1 1.265 0l.178.97a1.708 1.708 0 0 0 2.255 1.3L12 4.977c.255.334.467.698.63 1.084l-.754.637a1.704 1.704 0 0 0 0 2.604l.755.637a4.99 4.99 0 0 1-.63 1.084l-.937-.334a1.71 1.71 0 0 0-2.255 1.3l-.178.97a5.099 5.099 0 0 1-1.265 0l-.177-.97a1.708 1.708 0 0 0-2.255-1.3L4 11.023a4.987 4.987 0 0 1-.63-1.084l.754-.638a1.704 1.704 0 0 0 0-2.603l-.755-.637c.164-.386.376-.75.63-1.084z" fill="currentColor"></path>
+            </g>
+          </svg>
+        </cosy-icon>
+      </cosy-tooltip>
+    </div>
+  </aside>
+  <main>
+    
+<link rel="stylesheet" href="/css/9bb9a539.css">
+
+
+<div class="post-container">
+  <header>
+    <div class="left">
+      
+<link rel="stylesheet" href="/css/7d333f9e.css">
+
+<nav class="breadcrumb">
+  <section>
+    <cosy-tooltip placement="bottom-left">
+      <span slot="content"><span>首页</span>
+        <cosy-short-key>⌘</cosy-short-key>
+        <cosy-short-key>H</cosy-short-key>
+      </span>
+      <cosy-icon href="/">
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 20 20">
+          <g fill="none">
+            <path d="M8.998 2.388a1.5 1.5 0 0 1 2.005 0l5.5 4.942A1.5 1.5 0 0 1 17 8.445V15.5a1.5 1.5 0 0 1-1.5 1.5H13a1.5 1.5 0 0 1-1.5-1.5V12a.5.5 0 0 0-.5-.5H9a.5.5 0 0 0-.5.5v3.5A1.5 1.5 0 0 1 7 17H4.5A1.5 1.5 0 0 1 3 15.5V8.445c0-.425.18-.83.498-1.115l5.5-4.942zm1.336.744a.5.5 0 0 0-.668 0l-5.5 4.942A.5.5 0 0 0 4 8.445V15.5a.5.5 0 0 0 .5.5H7a.5.5 0 0 0 .5-.5V12A1.5 1.5 0 0 1 9 10.5h2a1.5 1.5 0 0 1 1.5 1.5v3.5a.5.5 0 0 0 .5.5h2.5a.5.5 0 0 0 .5-.5V8.445a.5.5 0 0 0-.166-.371l-5.5-4.942z" fill="currentColor"></path>
+          </g>
+        </svg>
+      </cosy-icon>
+    </cosy-tooltip>
+    
+    
+    <svg class="arrow" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 20 20">
+      <g fill="none">
+        <path d="M7.733 4.207a.75.75 0 0 1 1.06.026l5.001 5.25a.75.75 0 0 1 0 1.035l-5 5.25a.75.75 0 1 1-1.087-1.034L12.216 10l-4.51-4.734a.75.75 0 0 1 .027-1.06z" fill="currentColor"></path>
+      </g>
+    </svg>
+    <span class="ellipsis">
+      VEX机器人程序
+    </span>
+    
+  </section>
+</nav>
+
+
+<script src="/js/31d6cfe0.js"></script>
+
+    </div>
+    <div class="right">
+      
+      <cosy-tooltip id="toc-show-button" placement="left">
+        <span slot="content">
+          <span>显示 / 隐藏 文章目录</span>
+          <cosy-short-key>]</cosy-short-key>
+        </span>
+        <cosy-icon>
+          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 20 20">
+            <g fill="none">
+              <path d="M4 4c-1.104-.019-2 .896-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2H4zM3 6a1 1 0 0 1 1-1h2.995v10H4a1 1 0 0 1-1-1V6zm4.995 9V5h8.004a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H7.995z" fill="currentColor"></path>
+            </g>
+          </svg>
+        </cosy-icon>
+      </cosy-tooltip>
+      
+    </div>
+  </header>
+  <div class="content">
+    <main class="cosy-scrollbar">
+      <div class="article-container">
+        <!-- 渲染文章内容 -->
+        <article>
+          <!-- 文章标题 -->
+          <h1 class="post-title">VEX机器人程序</h1>
+          <div class="last-updated">
+            上次更新: 2024-01-30 20:28:44
+          </div>
+          <!-- 文章 -->
+          <h1 id="00-序言"><a href="#00-序言" class="headerlink" title="00 序言"></a>00 序言</h1><h2 id="0-1-语言基础说明"><a href="#0-1-语言基础说明" class="headerlink" title="0.1 语言基础说明"></a>0.1 语言基础说明</h2><p>VEX程序可以支持 <em>C++</em> 和 <em>python</em> ，但是在这里只涉及 <em><strong>C++</strong></em><br>如果有 <em>python</em> 基础而没有 <em>C++</em> 基础，建议访问<a target="_blank" rel="noopener" href="https://www.runoob.com/cplusplus/cpp-tutorial.html">菜鸟教程</a>来学习语法知识<br>如果编程基础近似为0而对编程有兴趣的同学，建议先在<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/training/list">洛谷题单</a>完成入门系列之后再来看VEX的教程</p>
+<h2 id="0-2-编译环境"><a href="#0-2-编译环境" class="headerlink" title="0.2 编译环境"></a>0.2 编译环境</h2><p>支持VEX程序的软件有 <a target="_blank" rel="noopener" href="https://code.visualstudio.com/sha/download?build=stable&os=win32-x64-user">vscode</a> 、<em>VEXcode pro v5</em> 等，本教程只介绍 <em><strong>vscode</strong></em> 的使用<br>点击此处的链接可以下载到 <em>vscode</em> 的安装包<br>打开 <em>vscode</em> 之后，需要下载拓展 <em>chinese</em> , <em>c&#x2F;c++</em> , <em>VEX Robotics</em><br><code>如果有兴趣可以追加拓展 Better C++ Syntax 、 C/C++ Compile Run 、 Dracula Official 、 CodeGeeX 等</code><br>另外，为了防患于未然，下载一个 <em>git</em> 和及时把代码上传到 <em>github</em> 是相当的有必要的<br>（我才不会告诉你我有一次文件损坏了只好从头重写呢）<br>下载 <em>git</em> 只需要跟着 <em>vscode</em> 的窗口一通按就好了，如何使用请看网上的<a target="_blank" rel="noopener" href="https://www.runoob.com/git/git-tutorial.html">教程</a><br>可以点击 <em>打开文件夹</em> 来开始你的代码</p>
+<h2 id="0-3-硬件条件"><a href="#0-3-硬件条件" class="headerlink" title="0.3 硬件条件"></a>0.3 硬件条件</h2><h3 id="主机"><a href="#主机" class="headerlink" title="主机"></a>主机</h3><p><img src="https://picdl.sunbangyan.cn/2023/11/13/30bda85ee2d0a3bc594fb858377d6b63.png" alt="主机图">  </p>
+<h3 id="手柄"><a href="#手柄" class="headerlink" title="手柄"></a>手柄</h3><p><img src="https://picdm.sunbangyan.cn/2023/11/13/968d794a5f0ca8bc9c740b824c06866b.jpg" alt="手柄正面图">  </p>
+<p><img src="https://picdm.sunbangyan.cn/2023/11/13/fc5565c734a368637488c795360e6c48.jpg" alt="手柄背面图">  </p>
+<h3 id="场控"><a href="#场控" class="headerlink" title="场控"></a>场控</h3><p><img src="https://picdl.sunbangyan.cn/2023/11/13/c74888fd0e1f50f7ab819dddddd89bae.png" alt="场控图">  </p>
+<h3 id="钢条"><a href="#钢条" class="headerlink" title="钢条"></a>钢条</h3><p><img src="https://picdl.sunbangyan.cn/2023/11/13/c74888fd0e1f50f7ab819dddddd89bae.png" alt="钢条图">  </p>
+<h3 id="传感器"><a href="#传感器" class="headerlink" title="传感器"></a>传感器</h3><p><img src="https://picdl.sunbangyan.cn/2023/11/13/c74888fd0e1f50f7ab819dddddd89bae.png" alt="传感器图">  </p>
+<h3 id="电机"><a href="#电机" class="headerlink" title="电机"></a>电机</h3><p><img src="https://picdm.sunbangyan.cn/2023/11/13/b86c1e9a14d043aec8aacf6a918774dc.jpg" alt="电机图">  </p>
+<h3 id="气泵"><a href="#气泵" class="headerlink" title="气泵"></a>气泵</h3><p><img src="https://picst.sunbangyan.cn/2023/11/13/04aceda6d70c2f7adc2594376fa5c41b.jpg" alt="气泵图">  </p>
+<h2 id="0-4-VEX社区"><a href="#0-4-VEX社区" class="headerlink" title="0.4 VEX社区"></a>0.4 VEX社区</h2><pre><code>VEX在[B站](https://www.bilibili.com/)中并不算极小众的，其中更新的比较多的up主是[TXTaylor297992](https://space.bilibili.com/1684280853)   
+此外，VEX有[中文官方论坛](https://vexforum.cn/)，在这里可以下载到官方给出的规则文档和场地拼接的文档
+</code></pre>
+<h1 id="01-面向对象"><a href="#01-面向对象" class="headerlink" title="01 面向对象"></a>01 面向对象</h1><h2 id="1-1-面向对象思维的介绍及引入"><a href="#1-1-面向对象思维的介绍及引入" class="headerlink" title="1.1 面向对象思维的介绍及引入"></a>1.1 面向对象思维的介绍及引入</h2><p><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1">wiki介绍</a><br>程序设计思维中，与 <em><strong>面向对象</strong></em> 相对的概念叫做 <em><strong>面向过程</strong></em> 。<br>后者考虑问题是通常把问题拆分成几个小问题，在编写程序中对应的行为一般有编写若干个函数。由于OI中一般只要考虑一个主问题即可，所以面向对象在OI中出现较多<br>前者则是将一个个功能封装进 <em>对象</em> 中，其对应的行为以实现 <em>类(class)</em> 为典型。这种程序设计的思维在 项目化编程 中有极大的优点——重用性、灵活性和扩展性 高<br>在此处，我们将从<a target="_blank" rel="noopener" href="https://www.runoob.com/cplusplus/cpp-classes-objects.html">class</a>的声明、定义、使用来入手，切实的感受 <em><strong>面向对象</strong></em> 的代码风格</p>
+<h2 id="1-2-classの定义"><a href="#1-2-classの定义" class="headerlink" title="1.2 classの定义"></a>1.2 classの定义</h2><p><a target="_blank" rel="noopener" href="https://www.runoob.com/cplusplus/cpp-classes-objects.html"><img src="https://www.runoob.com/wp-content/uploads/2015/05/cpp-classes-objects-2020-12-10-11.png" alt="菜鸟教程给出的定义结构"></a></p>
+<h3 id="类-及-类名"><a href="#类-及-类名" class="headerlink" title="类 及 类名"></a>类 及 类名</h3><p>给类取名的时候，可以参照<a target="_blank" rel="noopener" href="https://www.runoob.com/cplusplus/cpp-data-structures.html">struct</a>，命名规则和变量一致<br>类的名字以及成员变量 <em><strong>最好</strong></em> 有实际意义，例：</p>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">student</span><span class="token punctuation">&#123;</span>
+    <span class="token keyword">private</span><span class="token operator">:</span>
+    string name<span class="token punctuation">;</span><span class="token comment">//人的名字</span>
+    <span class="token keyword">int</span> c<span class="token punctuation">,</span>m<span class="token punctuation">,</span>e<span class="token punctuation">;</span><span class="token comment">//C代表语文，M代表数学，E代表英语</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="访问修饰符"><a href="#访问修饰符" class="headerlink" title="访问修饰符"></a><a target="_blank" rel="noopener" href="https://www.runoob.com/cplusplus/cpp-class-access-modifiers.html">访问修饰符</a></h3><p><code>本教程不涉及 继承 以及 protected 的使用，因为本教程用不到它们</code></p>
+<ul>
+<li>public<br>  公有成员在程序中类的外部是可访问的<br>  public下的成员变量以及成员函数的使用与<code>struct</code>无异</li>
+<li>private<br>  成员和类的默认访问修饰符是 private<br>  私有成员变量或函数在类的外部是<code>不可访问</code>的，甚至是<code>不可查看</code>的。只有<code>类和友元函数</code>可以访问私有成员。<br>  例:  <pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Box</span> <span class="token punctuation">&#123;</span>
+<span class="token keyword">private</span><span class="token operator">:</span>
+    <span class="token keyword">double</span> width<span class="token punctuation">;</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+    <span class="token keyword">double</span> length<span class="token punctuation">;</span>
+    <span class="token keyword">void</span> <span class="token function">setWidth</span><span class="token punctuation">(</span> <span class="token keyword">double</span> wid <span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">double</span> <span class="token function">getWidth</span><span class="token punctuation">(</span> <span class="token keyword">void</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>b<span class="token punctuation">;</span>  <span class="token comment">//相当于换行写了   Box b;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+  在这个例子中，变量width的访问修饰符是private，因此<code>b.width</code>的写法是非法的<br>  正确的做法是，通过<code>b.setwidth(double wid)</code>来设置<code>width</code>的值；<br>  通过<code>b.getWidth()</code>来获得<code>width</code>的值<br>  类似这种 <strong>在私有区域定义数据，在公有区域定义相关的函数，以便在类的外部也可以调用这些函数</strong> 的做法一般叫做 <em><strong>数据封装</strong></em>      这样能避免受到外界的干扰和误用，从而确保了安全<br>  样例中的<code>length</code>就不符合数据封装的原则，不要这样写 <del>否则你有可能会被狠狠批斗的</del></li>
+</ul>
+<h3 id="重载函数和重载运算符"><a href="#重载函数和重载运算符" class="headerlink" title="重载函数和重载运算符"></a><a target="_blank" rel="noopener" href="https://www.runoob.com/cplusplus/cpp-overloading.html">重载函数和重载运算符</a></h3><h4 id="重载函数"><a href="#重载函数" class="headerlink" title="重载函数"></a>重载函数</h4><p>C++ 允许在同一作用域中的某个函数和运算符指定多个定义，分别称为函数重载和运算符重载。<br>在同一个作用域内，可以声明几个功能类似的同名函数，但是这些同名函数的<strong>形式参数</strong>（个数、类型或顺序）必须不同。     我们不能仅通过<strong>返回类型</strong>的不同来重载函数。<br>重载函数可以为我们调用功能较相近的函数时提供便利,例:</p>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token comment">// 哦对了，重载函数在class外也是可以使用的哦</span>
+<span class="token keyword">void</span> <span class="token function">swap</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token operator">&amp;</span> a<span class="token punctuation">,</span><span class="token keyword">int</span><span class="token operator">&amp;</span> b<span class="token punctuation">)</span>      <span class="token punctuation">&#123;</span><span class="token keyword">int</span> t<span class="token operator">=</span>a<span class="token punctuation">;</span>a<span class="token operator">=</span>b<span class="token punctuation">;</span>b<span class="token operator">=</span>t<span class="token punctuation">;</span><span class="token punctuation">&#125;</span>
+<span class="token keyword">void</span> <span class="token function">swap</span><span class="token punctuation">(</span><span class="token keyword">float</span><span class="token operator">&amp;</span> a<span class="token punctuation">,</span><span class="token keyword">float</span><span class="token operator">&amp;</span> b<span class="token punctuation">)</span>  <span class="token punctuation">&#123;</span><span class="token keyword">float</span> t<span class="token operator">=</span>a<span class="token punctuation">;</span>a<span class="token operator">=</span>b<span class="token punctuation">;</span>b<span class="token operator">=</span>t<span class="token punctuation">;</span><span class="token punctuation">&#125;</span>
+<span class="token keyword">void</span> <span class="token function">swap</span><span class="token punctuation">(</span><span class="token keyword">bool</span><span class="token operator">&amp;</span> a<span class="token punctuation">,</span><span class="token keyword">bool</span><span class="token operator">&amp;</span> b<span class="token punctuation">)</span>    <span class="token punctuation">&#123;</span><span class="token keyword">bool</span> t<span class="token operator">=</span>b<span class="token punctuation">;</span>a<span class="token operator">=</span>b<span class="token punctuation">;</span>b<span class="token operator">=</span>t<span class="token punctuation">;</span><span class="token punctuation">&#125;</span>
+<span class="token comment">// 以下是在类中使用的</span>
+<span class="token keyword">class</span> <span class="token class-name">printer</span><span class="token punctuation">&#123;</span>
+    <span class="token keyword">public</span><span class="token operator">:</span>
+       <span class="token function">print</span><span class="token punctuation">(</span><span class="token keyword">int</span> a<span class="token punctuation">)</span>   <span class="token punctuation">&#123;</span>cout<span class="token operator">&lt;&lt;</span>a<span class="token punctuation">;</span><span class="token punctuation">&#125;</span>
+       <span class="token function">print</span><span class="token punctuation">(</span><span class="token keyword">float</span> a<span class="token punctuation">)</span>   <span class="token punctuation">&#123;</span>cout<span class="token operator">&lt;&lt;</span>a<span class="token punctuation">;</span><span class="token punctuation">&#125;</span>
+       <span class="token function">print</span><span class="token punctuation">(</span>string a<span class="token punctuation">)</span>   <span class="token punctuation">&#123;</span>cout<span class="token operator">&lt;&lt;</span>a<span class="token punctuation">;</span><span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+<span class="token comment">//错误示范</span>
+<span class="token keyword">int</span> <span class="token function">f</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span><span class="token keyword">void</span><span class="token punctuation">&#125;</span>
+<span class="token keyword">float</span> <span class="token function">f</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span><span class="token keyword">void</span><span class="token punctuation">&#125;</span>
+<span class="token comment">//主函数</span>
+<span class="token keyword">signed</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    printer p<span class="token punctuation">;</span>
+    p<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span><span class="token number">114514</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    p<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"\n1919810\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> a<span class="token punctuation">,</span>b<span class="token punctuation">;</span>
+        cin<span class="token operator">>></span>a<span class="token operator">>></span>b<span class="token punctuation">;</span>
+        <span class="token function">swap</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span>b<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        cout<span class="token operator">&lt;&lt;</span>a<span class="token operator">&lt;&lt;</span><span class="token char">' '</span><span class="token operator">&lt;&lt;</span>b<span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
+        <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="重载运算符"><a href="#重载运算符" class="headerlink" title="重载运算符"></a>重载运算符</h4><p>在c++中，运算符实际上也可以看作是一种函数，因此，就出现了<strong>重载运算符</strong>的用法<br>在这里我们介绍 <a target="_blank" rel="noopener" href="https://www.runoob.com/cplusplus/assignment-operators-overloading.html">赋值运算符  &#x3D; </a><br>多说无益，直接上样例：</p>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">node</span><span class="token punctuation">&#123;</span>  <span class="token comment">//平面直角坐标系中的一个点</span>
+    <span class="token keyword">private</span><span class="token operator">:</span>
+        <span class="token keyword">int</span> x<span class="token punctuation">,</span>y<span class="token punctuation">;</span> <span class="token comment">//坐标</span>
+    <span class="token keyword">public</span><span class="token operator">:</span>
+        <span class="token keyword">void</span> <span class="token keyword">operator</span><span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">const</span> node<span class="token operator">&amp;</span> n<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>  
+            <span class="token comment">//此处const node&amp; n 也可以写作node n</span>
+            <span class="token comment">//使用&amp;是为了提高效率，使用const是为了防止n的值被这里的赋值函数更改</span>
+            x <span class="token operator">=</span> n<span class="token punctuation">.</span>x<span class="token punctuation">;</span>    <span class="token comment">// 等效于 this->x = n.x;</span>
+            y <span class="token operator">=</span> n<span class="token punctuation">.</span>y<span class="token punctuation">;</span>    <span class="token comment">// 等效于 this->y = n.y;</span>
+        <span class="token punctuation">&#125;</span>
+        <span class="token keyword">friend</span> istream <span class="token keyword">operator</span><span class="token operator">>></span><span class="token punctuation">(</span>istream<span class="token operator">&amp;</span> in<span class="token punctuation">,</span>node<span class="token operator">&amp;</span> n<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+            <span class="token comment">// 不要求掌握，看看就好</span>
+            in<span class="token operator">>></span>n<span class="token punctuation">.</span>x<span class="token operator">>></span>n<span class="token punctuation">.</span>y<span class="token punctuation">;</span>
+            <span class="token keyword">return</span> in<span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+
+<span class="token keyword">signed</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+node n<span class="token punctuation">;</span>
+    node m<span class="token punctuation">;</span>
+    cin <span class="token operator">>></span> n<span class="token punctuation">;</span>
+    m <span class="token operator">=</span> n<span class="token punctuation">;</span>
+    <span class="token comment">// ...</span>
+    <span class="token comment">// 这段代码没有什么意义，只是为了说明重载运算符后类的运算就可以用符合我们原有习惯的写法来编写程序这一点而已</span>
+    <span class="token keyword">return</span> <span class="token number">0</span>；
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>可以看出，使用重载运算符的写法非常符合我们对变量的编写习惯。<br>这使得我们在使用类时感到非常的舒适 XD<br>需要注意的是，所有的运算符函数都是放在 <em><strong>public</strong></em> 访问修饰符下的     (其中 流运算符 是以友元函数的形式)</p>
+<h3 id="构造函数和析构函数，拷贝构造函数"><a href="#构造函数和析构函数，拷贝构造函数" class="headerlink" title="构造函数和析构函数，拷贝构造函数"></a><a target="_blank" rel="noopener" href="https://www.runoob.com/cplusplus/cpp-constructor-destructor.html">构造函数和析构函数</a>，<a target="_blank" rel="noopener" href="https://www.runoob.com/cplusplus/cpp-copy-constructor.html">拷贝构造函数</a></h3><p>这三个函数是类中非常特殊的函数。通过它们可以实现 <strong>初始化新对象</strong>、<strong>释放对象占用内存</strong>、<strong>复制对象</strong> 的作用<br>如果不编写这三个函数，编译器都会自动加入这几个函数。但是如果类中涉及到<strong>指针</strong>和<strong>动态内存</strong>时需要格外注意，此时必须人为的编写 <em>析构函数</em> 和 <em>拷贝构造函数</em><br>切记，这三个函数都应放在 <em><strong>public</strong></em> 下</p>
+<h4 id="构造函数"><a href="#构造函数" class="headerlink" title="构造函数"></a>构造函数</h4><p>类的构造函数会在<strong>每次创建类的新对象时</strong>执行。     构造函数的名称与类的名称是完全相同的，并且不会返回任何类型，也不会返回 void。     构造函数可用于为某些成员变量设置初始值。</p>
+<h4 id="析构函数"><a href="#析构函数" class="headerlink" title="析构函数"></a>析构函数</h4><p>类的析构函数会在<strong>每次删除所创建的对象时</strong>执行。     析构函数的名称与类的名称是完全相同的，只是在前面加了个波浪号（~）作为前缀     析构函数有助于在跳出程序（比如关闭文件、释放内存等）前<strong>释放资源</strong>。     默认析构函数不会释放成员指针变量所指向的内存空间，如果要释放的话，还需要人为定义释放。     因此，当类中存在<em>指针变量</em>并且有<em>动态内存</em>分配时，最好有一个析构函数用来释放内存     另外，析构函数<strong>不可以接受形参</strong>，因此不存在析构函数的重载函数</p>
+<h4 id="拷贝构造函数"><a href="#拷贝构造函数" class="headerlink" title="拷贝构造函数"></a>拷贝构造函数</h4><p>类的拷贝构造函数会在创建对象时，使用同一类中之前创建的对象来初始化新创建的对象。<br>函数一般有如下功能：</p>
+<ul>
+<li>通过使用另一个同类型的对象来 <em><strong>初始化</strong></em> 新创建的对象。</li>
+<li>复制对象并把它作为 ___函数参数___。</li>
+<li>复制对象并把它作为 ___函数返回值___。<br>如果在类中没有定义拷贝构造函数，编译器会自行定义一个。     如果类带有<em>指针变量</em>，并有<em>动态内存</em>分配，则它必须有一个拷贝构造函数。</li>
+</ul>
+<p>样例：</p>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">node</span><span class="token punctuation">&#123;</span>
+    <span class="token keyword">private</span><span class="token operator">:</span>
+        <span class="token keyword">int</span> <span class="token operator">*</span>n<span class="token punctuation">;</span>    
+    <span class="token keyword">public</span><span class="token operator">:</span>
+        <span class="token function">node</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//构造函数</span>
+        <span class="token function">node</span><span class="token punctuation">(</span><span class="token keyword">int</span> sum<span class="token punctuation">)</span><span class="token punctuation">;</span>          <span class="token comment">//带参数的构造函数</span>
+        <span class="token operator">~</span><span class="token function">node</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>                <span class="token comment">//析构函数</span>
+        <span class="token function">node</span><span class="token punctuation">(</span><span class="token keyword">const</span> node<span class="token operator">&amp;</span> obj<span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">//拷贝构造函数</span>
+        <span class="token keyword">int</span> <span class="token function">value</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+           <span class="token keyword">return</span> <span class="token operator">*</span>n<span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+node<span class="token double-colon punctuation">::</span><span class="token function">node</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>                  <span class="token comment">//在类外定义函数时需要在函数名前加上“类名::”</span>
+    n <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token keyword">int</span><span class="token punctuation">;</span>                  <span class="token comment">//为指针分配内存</span>
+    <span class="token operator">*</span>n <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+node<span class="token double-colon punctuation">::</span><span class="token function">node</span><span class="token punctuation">(</span><span class="token keyword">int</span> sum<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    n <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token keyword">int</span><span class="token punctuation">;</span>
+    <span class="token operator">*</span>n <span class="token operator">=</span> sum<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token class-name">node</span><span class="token double-colon punctuation">::</span><span class="token operator">~</span><span class="token function">node</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    <span class="token keyword">delete</span> n<span class="token punctuation">;</span>                     <span class="token comment">//释放指针内存</span>
+<span class="token punctuation">&#125;</span>
+node<span class="token double-colon punctuation">::</span><span class="token function">node</span><span class="token punctuation">(</span><span class="token keyword">const</span> node<span class="token operator">&amp;</span> obj<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    n <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token keyword">int</span><span class="token punctuation">;</span>
+    <span class="token operator">*</span>n <span class="token operator">=</span> <span class="token operator">*</span>obj<span class="token punctuation">.</span>n<span class="token punctuation">;</span>                  <span class="token comment">//拷贝值</span>
+<span class="token punctuation">&#125;</span>
+<span class="token keyword">int</span> <span class="token function">VALUE</span><span class="token punctuation">(</span>node n<span class="token punctuation">)</span><span class="token punctuation">&#123;</span><span class="token keyword">return</span> n<span class="token punctuation">.</span><span class="token function">value</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">&#125;</span> <span class="token comment">//拷贝构造函数的用法 II</span>
+node <span class="token function">bigger_one</span><span class="token punctuation">(</span>node a<span class="token punctuation">,</span>node b<span class="token punctuation">)</span><span class="token punctuation">&#123;</span><span class="token keyword">return</span> a<span class="token punctuation">.</span><span class="token function">value</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">></span>b<span class="token punctuation">.</span><span class="token function">value</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">?</span> a <span class="token operator">:</span> b <span class="token punctuation">;</span><span class="token punctuation">&#125;</span>
+    <span class="token comment">//三元运算符  ? :  。?前条件成立则返回 : 前的，否则返回 : 后的</span>
+<span class="token keyword">signed</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    node n<span class="token punctuation">;</span>
+    <span class="token comment">//无参数的构造函数可以省略</span>
+    node <span class="token function">m</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">;</span>                    
+    <span class="token comment">//带参数的构造函数的调用需要在变量后加括号，就像函数一样</span>
+    node <span class="token function">k</span><span class="token punctuation">(</span>m<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">//拷贝构造函数的用法 I</span>
+    n <span class="token operator">=</span> <span class="token function">bigger_one</span><span class="token punctuation">(</span>m<span class="token punctuation">,</span>k<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">//拷贝构造函数用法   III</span>
+    n <span class="token operator">=</span> <span class="token function">bigger_one</span><span class="token punctuation">(</span>m<span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">//构造函数的另类用法，其中遇到数值4时会调用node(int num)来把4转化为node类型</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="头文件与注释，cpp与定义"><a href="#头文件与注释，cpp与定义" class="headerlink" title="头文件与注释，cpp与定义"></a><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E5%A4%B4%E6%96%87%E4%BB%B6">头文件</a>与注释，cpp与定义</h3><p>还记得前文提到过 class 有着较高 重用性，灵活性，拓展性 吗？<br>如果在每一个程序的头部复制大量的class的定义，那么这种灵活性就荡然无存了<br>因此，就不得不介绍头文件了</p>
+<p>一个头文件一般包含类、子程序、变量和其他标识符的前置声明<br>习惯上，<em>函数、类、枚举类、常量</em>的声明会放在头文件中，即<code>xxx.h</code><br>而对应的<em>函数、类</em>的源码以及<em>注释</em>则会放在对应的源文件中，即<code>xxx.cpp</code><br>值得注意的是，为了防止头文件被反复调用造成重复声明的错误，头文件应在首行加入</p>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">pragma</span> <span class="token expression">once</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>或者</p>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token comment">// xxx.h</span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">ifndef</span> <span class="token expression">XXX</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">XXX</span></span>
+<span class="token comment">//你的代码</span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">endif</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>多说无用，下面摆上样例          </p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_30500289/article/details/96110759">样例：实现高精度算法</a><br>样例的代码非常的长，但是使用时只需要：</p>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">"intx.h"</span></span>
+<span class="token keyword">signed</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    <span class="token comment">//...</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>另外，vscode是支持<a target="_blank" rel="noopener" href="https://www.cnblogs.com/schips/p/12200388.html">doxygen注释</a>的     <a target="_blank" rel="noopener" href="https://doxygen.nl/manual/">Doxygen官方文档</a><br>在头文件中使用doxygen注释，可以对声明的类，函数进行说明<br>鼠标在引用了对应头文件的文件中只需要悬停在函数&#x2F;变量&#x2F;类&#x2F;命名空间&#x2F;…上就可以快捷的获知该处的注释<br>样例:</p>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token comment">// node.h</span>
+<span class="token comment">/**
+ * @class node
+ * @brief 表示一个平面直角坐标系中的一个点
+***/</span>
+<span class="token keyword">class</span> <span class="token class-name">node</span><span class="token punctuation">&#123;</span>
+    <span class="token keyword">private</span><span class="token operator">:</span>
+        <span class="token comment">/**
+         * @brief 表示坐标 \f$\left ( x,y \right )\f$
+        ***/</span>
+        <span class="token keyword">int</span> x<span class="token punctuation">,</span>y<span class="token punctuation">;</span>
+    <span class="token keyword">public</span><span class="token operator">:</span>
+        <span class="token comment">/**
+         * @brief 初始化
+         * @param a 对应x坐标
+         * @param b 对应y坐标
+        ***/</span>
+        <span class="token keyword">void</span> <span class="token function">set</span><span class="token punctuation">(</span><span class="token keyword">int</span> a<span class="token punctuation">,</span><span class="token keyword">int</span> b<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+           x <span class="token operator">=</span> a<span class="token punctuation">;</span>
+           y <span class="token operator">=</span> b<span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+        <span class="token comment">/**
+         * @brief 计算距离
+         * @param n 第二个坐标点
+         * @return 两点距离的平方
+        ***/</span>
+        <span class="token keyword">float</span> <span class="token function">dist</span><span class="token punctuation">(</span>node n<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+           <span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token operator">-></span>x <span class="token operator">-</span> n<span class="token punctuation">.</span>x<span class="token punctuation">)</span><span class="token operator">*</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token operator">-></span>x <span class="token operator">-</span> n<span class="token punctuation">.</span>x<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token operator">-></span>y <span class="token operator">-</span> n<span class="token punctuation">.</span>y<span class="token punctuation">)</span><span class="token operator">*</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token operator">-></span>y <span class="token operator">-</span> n<span class="token punctuation">.</span>y<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>鼠标悬停效果图<br>   <img src="https://picdl.sunbangyan.cn/2023/11/13/f733c7f3255c153f7c3b739af3aa4fad.png" alt="node的样例"><br>   <img src="https://picss.sunbangyan.cn/2023/11/13/eda1e9a2bb9d2267a57071ee053221ee.png" alt="set()的样例"><br>   <img src="https://picss.sunbangyan.cn/2023/11/13/d723d6d27e66114087a12f7b2d6c430b.png" alt="dist()的样例">     </p>
+<h3 id="后期学习方式"><a href="#后期学习方式" class="headerlink" title="后期学习方式"></a>后期学习方式</h3><p> 学会了class的阅读、编写后，我们进入后面的学习就有了一定的基础<br>   在vscode中，<em><strong>ctrl+左键</strong></em>可以查看头文件、函数、类的定义区域<br>   进入<code>v5_vcs.h</code>-&gt;<code>v5_cpp.h</code>-&gt;<code>需要查询的文件</code>，就可以看到官方给出的所有函数的定义。<br>   <img src="https://picss.sunbangyan.cn/2023/11/13/876f9447986e256e48ac73d7df16cf0a.png" alt="01-6-e1"><br>    <img src="https://picss.sunbangyan.cn/2023/11/13/262d62b1cc74dc22bb1e75e63a734ad7.png" alt="01-6-e2"><br>    <img src="https://picst.sunbangyan.cn/2023/11/13/4ed72494d898de9ac52b3f04d58b1062.png" alt="01-6-e3"><br>   当然，我会在接下来的章节来挑选重点的函数来讲解。有兴趣有余力的同学可以根据这个方法自行探究。     </p>
+<h1 id="02-主机-brain-与手柄-Controller"><a href="#02-主机-brain-与手柄-Controller" class="headerlink" title="02 主机(brain)与手柄(Controller)"></a>02 主机(brain)与手柄(Controller)</h1><h2 id="2-1-主机、手柄、电脑之间的硬件连接"><a href="#2-1-主机、手柄、电脑之间的硬件连接" class="headerlink" title="2.1 主机、手柄、电脑之间的硬件连接"></a>2.1 主机、手柄、电脑之间的硬件连接</h2><p><img src="https://picdl.sunbangyan.cn/2023/11/13/c74888fd0e1f50f7ab819dddddd89bae.png" alt="连线图">     </p>
+<h2 id="2-2-创建新的VEX工程文件、文件标题规范、文件储存位置"><a href="#2-2-创建新的VEX工程文件、文件标题规范、文件储存位置" class="headerlink" title="2.2 创建新的VEX工程文件、文件标题规范、文件储存位置"></a>2.2 创建新的VEX工程文件、文件标题规范、文件储存位置</h2><p>从VEX插件中 顺次点击 <code>new project -&gt; v5 -&gt; c++ -&gt; competition template -&gt; 命名项目名字 -&gt; create</code>，一个新的VEX工程文件就创建了</p>
+<h2 id="2-3-Brain-functions"><a href="#2-3-Brain-functions" class="headerlink" title="2.3 Brain.functions()"></a>2.3 Brain.functions()</h2><p>鉴于LXB水平有限，所以这里只讲一部分重要的函数</p>
+<h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token comment">// robot-config.h</span>
+<span class="token keyword">extern</span> brain Brain<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>构造函数没有参数输入</p>
+<h3 id="brain-timer"><a href="#brain-timer" class="headerlink" title="brain.timer"></a>brain.timer</h3><ul>
+<li>定义  <pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token comment">// vex_brain.cpp</span>
+<span class="token comment">/** 
+ * @brief 以指定的单位获取计时器的值。
+ * @param units 时间单位。有 sec (秒) 和 msec (毫秒)
+ * @return 返回一个双精度值，该值表示计时器的值。
+ */</span>
+<span class="token keyword">double</span> <span class="token function">timer</span><span class="token punctuation">(</span> timeUnits units <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">/** 
+ * @brief 将计时器重置为零。
+ */</span>
+<span class="token keyword">void</span> <span class="token function">reset</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li>使用例  <pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token comment">// your_file.cpp</span>
+<span class="token keyword">float</span> xxx<span class="token punctuation">;</span>
+Brain<span class="token punctuation">.</span>Timer<span class="token punctuation">.</span><span class="token function">reset</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">// 虽然在这里没必要但是这是一个好习惯</span>
+xxx <span class="token operator">=</span> Brain<span class="token punctuation">.</span>Timer<span class="token punctuation">.</span><span class="token function">time</span><span class="token punctuation">(</span>sec<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">while</span> <span class="token punctuation">(</span> Brain<span class="token punctuation">.</span>Timer<span class="token punctuation">.</span><span class="token function">time</span><span class="token punctuation">(</span>msec<span class="token punctuation">)</span> <span class="token operator">&lt;=</span> xxx<span class="token operator">*</span><span class="token number">1000</span> <span class="token operator">+</span> <span class="token number">1145</span> <span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//空循环，经过1.145s之后会继续</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+</ul>
+<h3 id="brain-screen"><a href="#brain-screen" class="headerlink" title="brain.screen"></a>brain.screen</h3><ul>
+<li>定义  <pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token comment">// vex_brain.cpp</span>
+<span class="token keyword">void</span> <span class="token function">print</span><span class="token punctuation">(</span> <span class="token keyword">char</span> <span class="token operator">*</span>format<span class="token punctuation">,</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">void</span> <span class="token function">printAt</span><span class="token punctuation">(</span> <span class="token keyword">int</span> x<span class="token punctuation">,</span> <span class="token keyword">int</span> y<span class="token punctuation">,</span> <span class="token keyword">const</span> <span class="token keyword">char</span> <span class="token operator">*</span>format<span class="token punctuation">,</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">void</span> <span class="token function">drawPixel</span><span class="token punctuation">(</span> <span class="token keyword">int</span> x<span class="token punctuation">,</span><span class="token keyword">int</span> y<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li>使用说明<br>  这里的<code>print()</code>函数的使用和<code>printf()</code>无异<br>  <code>printAt()</code>添加了参数<code>x</code>、<code>y</code>,含义是在主机屏幕输出时开始的坐标<br>  <code>drawPixel</code>是在屏幕的(x,y)处绘制一个像素点</li>
+</ul>
+<h2 id="2-4-Controller-functions"><a href="#2-4-Controller-functions" class="headerlink" title="2.4 Controller.functions()"></a>2.4 Controller.functions()</h2><h3 id="定义-1"><a href="#定义-1" class="headerlink" title="定义"></a>定义</h3><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token comment">// robot-config.h</span>
+<span class="token keyword">extern</span> controller Controller<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>和 <code>brain</code> 的定义一样平淡</p>
+<h3 id="按钮"><a href="#按钮" class="headerlink" title="按钮"></a>按钮</h3><p><img src="/image/01-4-2-2.jpg"><br>图中按钮可用的共有10个，分别是：<br>    - ButtonLeft<br>    - ButtonRight<br>    - ButtonUp<br>    - ButtonDown<br>    - ButtonA<br>    - ButtonB<br>    - ButtonX<br>    - ButtonY<br>    - ButtonL1<br>    - ButtonL2<br>    - ButtonR1<br>    - ButtonR2</p>
+<p>他们都属于 <code>controller</code>类中的成员类<code>button</code>，有以下成员函数：</p>
+<ul>
+<li>pressing()<br>  检查当下，如果按钮被按下则返回<code>true</code>，否则返回<code>false</code>。</li>
+<li>pressed()<br>  形参需要填入一个<code>void</code>函数的函数名来调用<br>  下次按钮被按下的时候调用函数</li>
+</ul>
+<p>使用例:</p>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token comment">// your_file.cpp</span>
+<span class="token comment">// ...</span>
+<span class="token keyword">void</span> <span class="token function">function</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+   <span class="token comment">// ...</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token keyword">signed</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+<span class="token comment">// ...</span>
+   <span class="token keyword">if</span> <span class="token punctuation">(</span> Controller1<span class="token punctuation">.</span>ButtonA<span class="token punctuation">.</span><span class="token function">pressing</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+      <span class="token comment">// ...</span>
+   <span class="token punctuation">&#125;</span>
+   Controller1<span class="token punctuation">.</span>ButtonB<span class="token punctuation">.</span><span class="token function">pressed</span><span class="token punctuation">(</span>function<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="摇杆"><a href="#摇杆" class="headerlink" title="摇杆"></a>摇杆</h3><p>遥控器上看似只有两个遥感，实际上程序中对应了4个<code>axis</code>对象:</p>
+<ul>
+<li>Axis1</li>
+<li>Axis2</li>
+<li>Axis3</li>
+<li>Axis4</li>
+</ul>
+<p>一个遥杆可以向任意二维方向旋转，每一个二维的位置都可以用二维坐标来表示。也就是说，一个摇杆对应了两个不同方向的<code>axis</code>对象。<br>其中，<code>Axis1</code>和<code>Axis4</code>都是横向的，<code>Axis2</code>和<code>Axis3</code>都是竖向的。<br><code>axis</code>一般只使用成员函数<code>position()</code></p>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token comment">// your_file.cpp</span>
+<span class="token keyword">void</span> <span class="token function">Dipan</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+   <span class="token comment">// 底盘运动函数</span>
+   <span class="token keyword">float</span> a1 <span class="token operator">=</span> Controller1<span class="token punctuation">.</span>Axis1<span class="token punctuation">.</span><span class="token function">position</span><span class="token punctuation">(</span>percent<span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token keyword">float</span> a3 <span class="token operator">=</span> Controller1<span class="token punctuation">.</span>Axis3<span class="token punctuation">.</span><span class="token function">position</span><span class="token punctuation">(</span>percent<span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token function">move</span><span class="token punctuation">(</span>a3<span class="token operator">+</span>a1<span class="token punctuation">,</span>a3<span class="token operator">-</span>a1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="屏幕"><a href="#屏幕" class="headerlink" title="屏幕"></a>屏幕</h3><p>有时，我们需要在遥控器上面显示信息来提示操作手。例如，改变了某个电机的转速时，通过提示操作手可以方便操作手进行下一步操作。<br>下面是在屏幕上显示一段文字的实例:</p>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token comment">// your_debug_file.cpp</span>
+<span class="token comment">/* ... */</span> <span class="token punctuation">&#123;</span>
+   Controller1<span class="token punctuation">.</span>Screen<span class="token punctuation">.</span><span class="token function">clearLine</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 清空之前的消息</span>
+   Controller1<span class="token punctuation">.</span>Screen<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"电机温度:%.2f ℃"</span><span class="token punctuation">,</span>MotorShot<span class="token punctuation">.</span><span class="token function">temperature</span><span class="token punctuation">(</span>celsius<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//输出格式同std::printf()</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h1 id="03-电机-motor-与运动"><a href="#03-电机-motor-与运动" class="headerlink" title="03 电机(motor)与运动"></a>03 电机(motor)与运动</h1><h2 id="3-1-声明"><a href="#3-1-声明" class="headerlink" title="3.1 声明"></a>3.1 声明</h2><p><code>motor</code>的构造函数有3个参数(建议都填入),分别是<code>index</code>、<code>gears</code>、<code>reverse</code>。</p>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token comment">// vex_motor.h</span>
+<span class="token function">motor</span><span class="token punctuation">(</span> <span class="token keyword">int32_t</span> index<span class="token punctuation">,</span> gearSetting gears<span class="token punctuation">,</span> <span class="token keyword">bool</span> reverse <span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<ul>
+<li><p><code>index</code><br> 表明电机接入的端口。<br> 主机上有两排端口,编号1-22。电机接入第<code>N</code>个端口就写 <code>PORTN</code></p>
+</li>
+<li><p><code>gears</code><br> 表明电机转速比<br> 有三种转速比,<code>ratio6_1</code>、<code>ratio18_1</code>、<code>ratio36_1</code>,     分别对应三种颜色的电机:蓝电机、绿电机、红电机     </p>
+<p> <img src="/image/motor_radio.png">     </p>
+</li>
+<li><p><code>reverse</code><br> 电机默认转向:正转or反转</p>
+</li>
+</ul>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token comment">// robot-config.h</span>
+<span class="token comment">// ...</span>
+motor MotorLF <span class="token operator">=</span> <span class="token function">motor</span><span class="token punctuation">(</span>PORT1<span class="token punctuation">,</span>radio18_1<span class="token punctuation">,</span><span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+motor MotorLB <span class="token operator">=</span> <span class="token function">motor</span><span class="token punctuation">(</span>PORT2<span class="token punctuation">,</span>radio18_1<span class="token punctuation">,</span><span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+motor MotorRF <span class="token operator">=</span> <span class="token function">motor</span><span class="token punctuation">(</span>PORT3<span class="token punctuation">,</span>radio18_1<span class="token punctuation">,</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+motor MotorRB <span class="token operator">=</span> <span class="token function">motor</span><span class="token punctuation">(</span>PORT4<span class="token punctuation">,</span>radio18_1<span class="token punctuation">,</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="3-2-电机-与-手动控制程序"><a href="#3-2-电机-与-手动控制程序" class="headerlink" title="3.2 电机 与 手动控制程序"></a>3.2 电机 与 手动控制程序</h2><h3 id="电机转动"><a href="#电机转动" class="headerlink" title="电机转动"></a>电机转动</h3><ul>
+<li><p><code>spin()</code><br> 此函数会让电机以指定速度旋转。     </p>
+ <pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token comment">// vex_motor.h</span>
+<span class="token comment">/**
+* @brief 打开电机并按指定方向和指定速度旋转。
+* @param dir 电机旋转的方向。有 forward 和 reverse 两种值。也支持 fwd 和 rev 两种缩写
+* @param velocity 速度大小。值域[-100.0,100.0]。超出则化为 ±100
+* @param units 速度的单位。常用 percent ,也可缩写为 pct
+*/</span>
+<span class="token keyword">void</span> <span class="token function">spin</span><span class="token punctuation">(</span> directionType dir<span class="token punctuation">,</span> <span class="token keyword">double</span> velocity<span class="token punctuation">,</span> velocityUnits units <span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p> 以底盘的运动程序为例：</p>
+ <pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token comment">// your_file.h</span>
+<span class="token keyword">void</span> <span class="token function">move</span><span class="token punctuation">(</span><span class="token keyword">float</span> l<span class="token punctuation">,</span><span class="token keyword">float</span> r<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+   MotorLF<span class="token punctuation">.</span><span class="token function">spin</span><span class="token punctuation">(</span>forward<span class="token punctuation">,</span>l<span class="token punctuation">,</span>pct<span class="token punctuation">)</span><span class="token punctuation">;</span>
+   MotorLB<span class="token punctuation">.</span><span class="token function">spin</span><span class="token punctuation">(</span>forward<span class="token punctuation">,</span>l<span class="token punctuation">,</span>pct<span class="token punctuation">)</span><span class="token punctuation">;</span>
+   MotorRF<span class="token punctuation">.</span><span class="token function">spin</span><span class="token punctuation">(</span>forward<span class="token punctuation">,</span>r<span class="token punctuation">,</span>pct<span class="token punctuation">)</span><span class="token punctuation">;</span>
+   MotorRB<span class="token punctuation">.</span><span class="token function">spin</span><span class="token punctuation">(</span>forward<span class="token punctuation">,</span>r<span class="token punctuation">,</span>pct<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li><p><code>stop()</code><br> 使电机停止(停止向电机供电)</p>
+ <pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token comment">/** 
+* @brief 使用默认制动模式停止电机。
+*/</span>
+<span class="token keyword">void</span> <span class="token function">stop</span><span class="token punctuation">(</span> <span class="token keyword">void</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">/** 
+* @brief 使用指定的制动模式停止电机。
+* @param mode 制动模式可以设置为滑行(coast)、制动(brake)或保持(hold)。
+*/</span>
+<span class="token keyword">void</span> <span class="token function">stop</span><span class="token punctuation">(</span> brakeType mode <span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p> 以底盘的停止运行为例:</p>
+ <pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token comment">// your_file.cpp</span>
+<span class="token keyword">void</span> <span class="token function">Stop</span><span class="token punctuation">(</span><span class="token keyword">bool</span> flag <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+   <span class="token keyword">if</span> <span class="token punctuation">(</span>flag <span class="token operator">==</span> <span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+      MotorLF<span class="token punctuation">.</span><span class="token function">stop</span><span class="token punctuation">(</span>coast<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      MotorLB<span class="token punctuation">.</span><span class="token function">stop</span><span class="token punctuation">(</span>coast<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      MotorRF<span class="token punctuation">.</span><span class="token function">stop</span><span class="token punctuation">(</span>coast<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      MotorRB<span class="token punctuation">.</span><span class="token function">stop</span><span class="token punctuation">(</span>coast<span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token punctuation">&#125;</span>
+   <span class="token keyword">else</span><span class="token punctuation">&#123;</span>
+      MotorLF<span class="token punctuation">.</span><span class="token function">stop</span><span class="token punctuation">(</span>hold<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      MotorLB<span class="token punctuation">.</span><span class="token function">stop</span><span class="token punctuation">(</span>hold<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      MotorRF<span class="token punctuation">.</span><span class="token function">stop</span><span class="token punctuation">(</span>hold<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      MotorRB<span class="token punctuation">.</span><span class="token function">stop</span><span class="token punctuation">(</span>hold<span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>底盘的停止一般使用<code>coast</code>。这是为了防止<code>hold</code>状态下机器人被碰撞导致电机的损坏。<br>自动程序中由于有<code>不允许进入对手场地</code>的规则，因此只要队伍内部有配合，就不用讨论上述的问题</p>
+</li>
+</ul>
+<h3 id="监测电机"><a href="#监测电机" class="headerlink" title="监测电机"></a>监测电机</h3><ul>
+<li><code>double position( rotationUnits units )</code><br>返回电机转过的角度<br>一般填入单位 degrees     </li>
+<li><code>void resetPosition()</code><br>重置 <code>position()</code>的返回值<br>重置需要一小段时间，重置时尽量保持电机的静止</li>
+<li><code>double temperature( temperatureUnits units );</code><br>返回电机此时的温度<br>可填入单位 摄氏度(<code>celsius</code>)     </li>
+<li>…</li>
+</ul>
+<h1 id="04-陀螺仪-与-自动转弯"><a href="#04-陀螺仪-与-自动转弯" class="headerlink" title="04 陀螺仪 与 自动转弯"></a>04 陀螺仪 与 自动转弯</h1><h2 id="4-1-声明、命名"><a href="#4-1-声明、命名" class="headerlink" title="4.1 声明、命名"></a>4.1 声明、命名</h2><pre><code>需要填入的参数仅有端口
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token comment">// vex_imu.h</span>
+<span class="token function">inertial</span><span class="token punctuation">(</span> <span class="token keyword">int32_t</span> index<span class="token punctuation">,</span> turnType dir <span class="token operator">=</span> turnType<span class="token double-colon punctuation">::</span>right <span class="token punctuation">)</span><span class="token punctuation">;</span>  <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+声明比`motor`简单
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token comment">// robot-config.cpp</span>
+inertial ine <span class="token operator">=</span> <span class="token function">inertial</span><span class="token punctuation">(</span>PORT11<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+</code></pre>
+<h2 id="4-2-初始化"><a href="#4-2-初始化" class="headerlink" title="4.2 初始化"></a>4.2 初始化</h2><p>类似于<code>motor</code>中的<code>position()</code>，对陀螺仪初始化是必要的。</p>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token comment">// your_file.cpp</span>
+<span class="token keyword">void</span> <span class="token function">reset</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+  <span class="token comment">//初始化底盘电机</span>
+  MotorLF<span class="token punctuation">.</span><span class="token function">resetPosition</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  MotorLB<span class="token punctuation">.</span><span class="token function">resetPosition</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  MotorRF<span class="token punctuation">.</span><span class="token function">resetPosition</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  MotorRB<span class="token punctuation">.</span><span class="token function">resetPosition</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token comment">//初始化陀螺仪</span>
+  ine<span class="token punctuation">.</span><span class="token function">calibrate</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token comment">//初始化计时器</span>
+  Brain<span class="token punctuation">.</span>Timer<span class="token punctuation">.</span><span class="token function">reset</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="4-3-数据检测"><a href="#4-3-数据检测" class="headerlink" title="4.3 数据检测"></a>4.3 数据检测</h2><p>仅介绍最常用的<code>heading()</code>,其他函数仅作涉及</p>
+<ul>
+<li><p><code>heading()</code></p>
+ <pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token comment">/**
+ * @brief 获取惯性传感器的水平方向,方向角取值范围 [0,360] ,单位:度
+ * @return 返回一个double值，该值表示惯性传感器的方向。
+ * @param units 单位,默认为度
+ */</span>
+<span class="token keyword">double</span> <span class="token function">heading</span><span class="token punctuation">(</span> rotationUnits units <span class="token operator">=</span> rotationUnits<span class="token double-colon punctuation">::</span>deg <span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+<li><p><code>rotation()</code><br> 获取仰角</p>
+</li>
+</ul>
+<h2 id="4-4-自动程序中的转弯问题"><a href="#4-4-自动程序中的转弯问题" class="headerlink" title="4.4 自动程序中的转弯问题"></a>4.4 自动程序中的转弯问题</h2><p>自动程序中，是不可以通过操作手柄来给机器人输入数据的。因此，机器人在自动赛时段的运动完全依靠程序的预设。<br><em>如何让机器人旋转到我们需要的方向？</em>     </p>
+<p>最简单的写法是使用计时器。机器人旋转的速度是粗略相等的，因此在程序开发时间较短的情况下，这可以作为最后的保底程序来使用。<br>   <pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token comment">// your_auto_file.cpp</span>
+<span class="token keyword">void</span> <span class="token function">turn_with_timer</span><span class="token punctuation">(</span><span class="token keyword">int</span> t<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+   <span class="token keyword">int</span> turn_speed<span class="token operator">=</span><span class="token number">100</span><span class="token punctuation">;</span>
+   <span class="token keyword">if</span> <span class="token punctuation">(</span>t<span class="token operator">&lt;</span><span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+      turn_speed<span class="token operator">=</span><span class="token operator">-</span><span class="token number">100</span><span class="token punctuation">;</span>
+      t<span class="token operator">=</span><span class="token operator">-</span>t<span class="token punctuation">;</span>
+   <span class="token punctuation">&#125;</span>                                   <span class="token comment">// 左右转放在同一程序里</span>
+   <span class="token function">move</span><span class="token punctuation">(</span>turn_speed<span class="token punctuation">,</span><span class="token operator">-</span>turn_speed<span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token function">wait</span><span class="token punctuation">(</span>t<span class="token punctuation">,</span>msec<span class="token punctuation">)</span><span class="token punctuation">;</span>                       <span class="token comment">// 定义见于vex.h中</span>
+   <span class="token function">stop</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>                         <span class="token comment">// 旋转结束建议锁死，以提高准确度</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><br>但是这并不是一个合适的方案。我们难以控制每次旋转时的环境因素保持一样(比如地面摩擦系数，电机温度，电池电压等)。有时这种小小的偏差就会导致行进线路的变形，会影响到之后的自动任务，甚至可能<code>DQ(犯规)</code>。<br>在精准转弯的要求下，我们便需要陀螺仪来帮助校准。  </p>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token comment">// your_auto_file.cpp</span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">"extensions.h"</span>    <span class="token comment">// include pids.h</span></span>
+<span class="token keyword">void</span> <span class="token function">turn</span><span class="token punctuation">(</span><span class="token keyword">int</span> deg<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+  pids turning <span class="token punctuation">;</span>          <span class="token comment">// 定义pid算法对象</span>
+  turning<span class="token punctuation">.</span><span class="token function">pre</span><span class="token punctuation">(</span>deg<span class="token punctuation">,</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment">// 向pid系统中输入目标和最大允许偏差</span>
+  <span class="token keyword">float</span> movement<span class="token punctuation">;</span>         <span class="token comment">// 记录每次pid系统反馈的运动量</span>
+  Ine<span class="token punctuation">.</span><span class="token function">calibrate</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>        <span class="token comment">// 初始化陀螺仪</span>
+  <span class="token keyword">while</span> <span class="token punctuation">(</span> turning<span class="token punctuation">.</span><span class="token function">check</span> <span class="token punctuation">(</span>Ine<span class="token punctuation">.</span><span class="token function">heading</span><span class="token punctuation">(</span>degrees<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">)</span>  <span class="token punctuation">&#123;</span>
+                          <span class="token comment">// 当机器人还未稳定在最大允许偏差区间内时一直不断调整</span>
+    movement <span class="token operator">=</span> turning<span class="token punctuation">.</span><span class="token function">moving</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">move</span><span class="token punctuation">(</span><span class="token operator">-</span>movement <span class="token operator">*</span><span class="token number">0.4</span><span class="token punctuation">,</span>movement <span class="token operator">*</span><span class="token number">0.4</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                          <span class="token comment">// 运动</span>
+  <span class="token punctuation">&#125;</span>
+  
+  <span class="token function">stop</span><span class="token punctuation">(</span><span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span>             <span class="token comment">// pid算法下机器人旋转的末速度很小，不需要hold</span>
+  <span class="token function">wait</span> <span class="token punctuation">(</span><span class="token number">0.8</span><span class="token punctuation">,</span>sec<span class="token punctuation">)</span><span class="token punctuation">;</span>          <span class="token comment">// 等待机器人彻底停止</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><code>PID算法</code>将在<a href="/README.md/#07-pid%E7%B2%BE%E7%A1%AE%E6%8E%A7%E5%88%B6%E7%AE%97%E6%B3%95">第7章节</a>中详细介绍其优缺点。</p>
+<h2 id="4-5-画外吐槽"><a href="#4-5-画外吐槽" class="headerlink" title="4.5 画外吐槽"></a>4.5 画外吐槽</h2><p>我非常讨厌陀螺仪<br>因为它带给我的回忆除了出bug就是掉链子     </p>
+<p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1FW4y1V7af">陀螺仪发癫珍贵录像</a></p>
+<h1 id="05-气泵"><a href="#05-气泵" class="headerlink" title="05 气泵"></a>05 气泵</h1><h2 id="5-1-定义、命名"><a href="#5-1-定义、命名" class="headerlink" title="5.1 定义、命名"></a>5.1 定义、命名</h2><p>气泵的程序其实是最简单的，只不过定义和电机或者传感器都有点区别</p>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token comment">// vex_triport.h</span>
+<span class="token comment">/**
+* @brief 在参数中指定的三线端口上创建新的digital_out对象。
+* @param port 三线端口。
+*/</span>
+<span class="token function">digital_out</span><span class="token punctuation">(</span> triport<span class="token double-colon punctuation">::</span>port <span class="token operator">&amp;</span>port <span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><code>triport</code>和电机端口的<code>int32_t</code>不同     </p>
+<table>
+<thead>
+<tr>
+<th>port :</th>
+<th>int32_t</th>
+<th>triport</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>个数</td>
+<td>21</td>
+<td>8</td>
+</tr>
+<tr>
+<td>编号</td>
+<td>1-22</td>
+<td>A-H</td>
+</tr>
+<tr>
+<td>位置</td>
+<td>主机上下两侧</td>
+<td>主机左侧</td>
+</tr>
+<tr>
+<td>格式</td>
+<td>PORTn</td>
+<td>Brain.ThreeWirePort.N</td>
+</tr>
+</tbody></table>
+<p>习惯上把气泵命名为 <code>pne</code> (Pneumatic components)</p>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token comment">// robot-config.cpp</span>
+digital_out <span class="token function">pne</span> <span class="token punctuation">(</span> Brain<span class="token punctuation">.</span>ThreeWirePort<span class="token punctuation">.</span>A <span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h2 id="5-2-实物介绍"><a href="#5-2-实物介绍" class="headerlink" title="5.2 实物介绍"></a>5.2 实物介绍</h2><p>气泵的程序很简单，但是气泵的部件比电机复杂的多<br><img src="/image/05-2-e1.png"><br>图中的结构中，通过程序所能操作的仅仅是 发送到&#x2F;接受数据于 <code>换向阀驱动器</code> ，从而改变换向阀联通的状态。<br>机器人上是否使用气泵，需要考虑机械师的技术水平。因为程序能在气泵上做的事情太少太简单了。</p>
+<h2 id="5-3-functions"><a href="#5-3-functions" class="headerlink" title="5.3 functions"></a>5.3 functions</h2><ul>
+<li><code>set()</code><br>设置气泵的伸缩状态。<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token comment">/**
+   * @brief 将digital_out设备设置为布尔值。
+   * @param value 布尔值。(true or false)
+   */</span>
+  <span class="token keyword">void</span> <span class="token function">set</span><span class="token punctuation">(</span> <span class="token keyword">bool</span> value <span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+当<code>pne.set(true)</code>执行后，换向阀驱动器将会亮起红灯<br>当<code>pne.set(false)</code>执行后，换向阀驱动器红队将会熄灭</li>
+<li>value()<br>读取气泵的状态<br><code>pne.set(true)</code>后，value的返回值就会变为<code>true</code>，反之亦然。</li>
+</ul>
+<h1 id="06-视觉传感器"><a href="#06-视觉传感器" class="headerlink" title="06 视觉传感器"></a>06 视觉传感器</h1><ol>
+<li>定义、命名</li>
+<li>初始化</li>
+<li>颜色设置 和 识别机制的介绍</li>
+<li>返回值</li>
+</ol>
+<h1 id="07-PID精确控制算法"><a href="#07-PID精确控制算法" class="headerlink" title="07 *PID精确控制算法"></a>07 *PID精确控制算法</h1><ol>
+<li>定义</li>
+<li>原理介绍</li>
+<li>使用方法</li>
+<li>优缺点<br>优点在本章中已经反复强调了,就是通过pid算法的控制，机器人能够精确的运动。<br>缺点就是把pid的算法中用于前进的控制中会大大降低前进的效率<br>这种缺点只会体现在<em><strong>需要停止的运动</strong></em>中，比如说<strong>前进</strong>、<strong>转弯</strong>这类运动中。pid最适合的应用应该是 <em><strong>一直维持某种状态</strong></em> 的情况下，例如 <strong>平衡车的平衡</strong> , 这时pid的运行是贯彻平衡车运动的始终的，也就不存在所谓<strong>超时</strong>的问题了。</li>
+</ol>
+<h1 id="08-手动程序"><a href="#08-手动程序" class="headerlink" title="08 手动程序"></a>08 手动程序</h1><ol>
+<li>与操作手对接</li>
+<li>底盘方案<ul>
+<li>左前进右旋转</li>
+<li>万向底盘</li>
+<li>无头模式</li>
+</ul>
+</li>
+</ol>
+<h1 id="09-自动程序"><a href="#09-自动程序" class="headerlink" title="09 自动程序"></a>09 自动程序</h1><ol>
+<li>自动赛规则</li>
+<li>前进控制</li>
+<li>转弯控制</li>
+<li>完成自动赛任务</li>
+<li>多备案 + 耐心</li>
+</ol>
+<h1 id="10-规则类怪谈"><a href="#10-规则类怪谈" class="headerlink" title="10 规则类怪谈"></a>10 规则类怪谈</h1><ol>
+<li>码风要求</li>
+<li>注释规范化</li>
+<li>请参与github的更新</li>
+</ol>
+
+          <div class="post-tags">
+            <!-- 文章tags -->
+            
+          </div>
+          <p class="motto">重拾纯粹的写作</p>
+        </article>
+        <!-- 评论 -->
+        <div id="vcomments"></div>
+      </div>
+    </main>
+    <!-- toc -->
+    
+    <cosy-drag-box id="toc-drag-box" trigger="left" min-width="220" uid="toc-box">
+      <div class="meta-container">
+        <div class="toc-wrapper cosy-scrollbar">
+          <p class="catalog">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24">
+              <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 6h16"></path>
+                <path d="M4 12h16"></path>
+                <path d="M4 18h12"></path>
+              </g>
+            </svg>
+            <span>目录</span>
+          </p>
+          <!-- 文章toc -->
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#00-%E5%BA%8F%E8%A8%80"><span class="toc-number">1.</span> <span class="toc-text">00 序言</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#0-1-%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80%E8%AF%B4%E6%98%8E"><span class="toc-number">1.1.</span> <span class="toc-text">0.1 语言基础说明</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#0-2-%E7%BC%96%E8%AF%91%E7%8E%AF%E5%A2%83"><span class="toc-number">1.2.</span> <span class="toc-text">0.2 编译环境</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#0-3-%E7%A1%AC%E4%BB%B6%E6%9D%A1%E4%BB%B6"><span class="toc-number">1.3.</span> <span class="toc-text">0.3 硬件条件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BB%E6%9C%BA"><span class="toc-number">1.3.1.</span> <span class="toc-text">主机</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%89%8B%E6%9F%84"><span class="toc-number">1.3.2.</span> <span class="toc-text">手柄</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9C%BA%E6%8E%A7"><span class="toc-number">1.3.3.</span> <span class="toc-text">场控</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%92%A2%E6%9D%A1"><span class="toc-number">1.3.4.</span> <span class="toc-text">钢条</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BC%A0%E6%84%9F%E5%99%A8"><span class="toc-number">1.3.5.</span> <span class="toc-text">传感器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%B5%E6%9C%BA"><span class="toc-number">1.3.6.</span> <span class="toc-text">电机</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B0%94%E6%B3%B5"><span class="toc-number">1.3.7.</span> <span class="toc-text">气泵</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#0-4-VEX%E7%A4%BE%E5%8C%BA"><span class="toc-number">1.4.</span> <span class="toc-text">0.4 VEX社区</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#01-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1"><span class="toc-number">2.</span> <span class="toc-text">01 面向对象</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E6%80%9D%E7%BB%B4%E7%9A%84%E4%BB%8B%E7%BB%8D%E5%8F%8A%E5%BC%95%E5%85%A5"><span class="toc-number">2.1.</span> <span class="toc-text">1.1 面向对象思维的介绍及引入</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-2-class%E3%81%AE%E5%AE%9A%E4%B9%89"><span class="toc-number">2.2.</span> <span class="toc-text">1.2 classの定义</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%B1%BB-%E5%8F%8A-%E7%B1%BB%E5%90%8D"><span class="toc-number">2.2.1.</span> <span class="toc-text">类 及 类名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%BF%E9%97%AE%E4%BF%AE%E9%A5%B0%E7%AC%A6"><span class="toc-number">2.2.2.</span> <span class="toc-text">访问修饰符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%87%8D%E8%BD%BD%E5%87%BD%E6%95%B0%E5%92%8C%E9%87%8D%E8%BD%BD%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">2.2.3.</span> <span class="toc-text">重载函数和重载运算符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%E5%92%8C%E6%9E%90%E6%9E%84%E5%87%BD%E6%95%B0%EF%BC%8C%E6%8B%B7%E8%B4%9D%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0"><span class="toc-number">2.2.4.</span> <span class="toc-text">构造函数和析构函数，拷贝构造函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%B4%E6%96%87%E4%BB%B6%E4%B8%8E%E6%B3%A8%E9%87%8A%EF%BC%8Ccpp%E4%B8%8E%E5%AE%9A%E4%B9%89"><span class="toc-number">2.2.5.</span> <span class="toc-text">头文件与注释，cpp与定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%8E%E6%9C%9F%E5%AD%A6%E4%B9%A0%E6%96%B9%E5%BC%8F"><span class="toc-number">2.2.6.</span> <span class="toc-text">后期学习方式</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#02-%E4%B8%BB%E6%9C%BA-brain-%E4%B8%8E%E6%89%8B%E6%9F%84-Controller"><span class="toc-number">3.</span> <span class="toc-text">02 主机(brain)与手柄(Controller)</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1-%E4%B8%BB%E6%9C%BA%E3%80%81%E6%89%8B%E6%9F%84%E3%80%81%E7%94%B5%E8%84%91%E4%B9%8B%E9%97%B4%E7%9A%84%E7%A1%AC%E4%BB%B6%E8%BF%9E%E6%8E%A5"><span class="toc-number">3.1.</span> <span class="toc-text">2.1 主机、手柄、电脑之间的硬件连接</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2-%E5%88%9B%E5%BB%BA%E6%96%B0%E7%9A%84VEX%E5%B7%A5%E7%A8%8B%E6%96%87%E4%BB%B6%E3%80%81%E6%96%87%E4%BB%B6%E6%A0%87%E9%A2%98%E8%A7%84%E8%8C%83%E3%80%81%E6%96%87%E4%BB%B6%E5%82%A8%E5%AD%98%E4%BD%8D%E7%BD%AE"><span class="toc-number">3.2.</span> <span class="toc-text">2.2 创建新的VEX工程文件、文件标题规范、文件储存位置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-3-Brain-functions"><span class="toc-number">3.3.</span> <span class="toc-text">2.3 Brain.functions()</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89"><span class="toc-number">3.3.1.</span> <span class="toc-text">定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#brain-timer"><span class="toc-number">3.3.2.</span> <span class="toc-text">brain.timer</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#brain-screen"><span class="toc-number">3.3.3.</span> <span class="toc-text">brain.screen</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-4-Controller-functions"><span class="toc-number">3.4.</span> <span class="toc-text">2.4 Controller.functions()</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89-1"><span class="toc-number">3.4.1.</span> <span class="toc-text">定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8C%89%E9%92%AE"><span class="toc-number">3.4.2.</span> <span class="toc-text">按钮</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%91%87%E6%9D%86"><span class="toc-number">3.4.3.</span> <span class="toc-text">摇杆</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B1%8F%E5%B9%95"><span class="toc-number">3.4.4.</span> <span class="toc-text">屏幕</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#03-%E7%94%B5%E6%9C%BA-motor-%E4%B8%8E%E8%BF%90%E5%8A%A8"><span class="toc-number">4.</span> <span class="toc-text">03 电机(motor)与运动</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#3-1-%E5%A3%B0%E6%98%8E"><span class="toc-number">4.1.</span> <span class="toc-text">3.1 声明</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-2-%E7%94%B5%E6%9C%BA-%E4%B8%8E-%E6%89%8B%E5%8A%A8%E6%8E%A7%E5%88%B6%E7%A8%8B%E5%BA%8F"><span class="toc-number">4.2.</span> <span class="toc-text">3.2 电机 与 手动控制程序</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%B5%E6%9C%BA%E8%BD%AC%E5%8A%A8"><span class="toc-number">4.2.1.</span> <span class="toc-text">电机转动</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%91%E6%B5%8B%E7%94%B5%E6%9C%BA"><span class="toc-number">4.2.2.</span> <span class="toc-text">监测电机</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#04-%E9%99%80%E8%9E%BA%E4%BB%AA-%E4%B8%8E-%E8%87%AA%E5%8A%A8%E8%BD%AC%E5%BC%AF"><span class="toc-number">5.</span> <span class="toc-text">04 陀螺仪 与 自动转弯</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#4-1-%E5%A3%B0%E6%98%8E%E3%80%81%E5%91%BD%E5%90%8D"><span class="toc-number">5.1.</span> <span class="toc-text">4.1 声明、命名</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-2-%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="toc-number">5.2.</span> <span class="toc-text">4.2 初始化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-3-%E6%95%B0%E6%8D%AE%E6%A3%80%E6%B5%8B"><span class="toc-number">5.3.</span> <span class="toc-text">4.3 数据检测</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-4-%E8%87%AA%E5%8A%A8%E7%A8%8B%E5%BA%8F%E4%B8%AD%E7%9A%84%E8%BD%AC%E5%BC%AF%E9%97%AE%E9%A2%98"><span class="toc-number">5.4.</span> <span class="toc-text">4.4 自动程序中的转弯问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-5-%E7%94%BB%E5%A4%96%E5%90%90%E6%A7%BD"><span class="toc-number">5.5.</span> <span class="toc-text">4.5 画外吐槽</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#05-%E6%B0%94%E6%B3%B5"><span class="toc-number">6.</span> <span class="toc-text">05 气泵</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#5-1-%E5%AE%9A%E4%B9%89%E3%80%81%E5%91%BD%E5%90%8D"><span class="toc-number">6.1.</span> <span class="toc-text">5.1 定义、命名</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-2-%E5%AE%9E%E7%89%A9%E4%BB%8B%E7%BB%8D"><span class="toc-number">6.2.</span> <span class="toc-text">5.2 实物介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-3-functions"><span class="toc-number">6.3.</span> <span class="toc-text">5.3 functions</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#06-%E8%A7%86%E8%A7%89%E4%BC%A0%E6%84%9F%E5%99%A8"><span class="toc-number">7.</span> <span class="toc-text">06 视觉传感器</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#07-PID%E7%B2%BE%E7%A1%AE%E6%8E%A7%E5%88%B6%E7%AE%97%E6%B3%95"><span class="toc-number">8.</span> <span class="toc-text">07 *PID精确控制算法</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#08-%E6%89%8B%E5%8A%A8%E7%A8%8B%E5%BA%8F"><span class="toc-number">9.</span> <span class="toc-text">08 手动程序</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#09-%E8%87%AA%E5%8A%A8%E7%A8%8B%E5%BA%8F"><span class="toc-number">10.</span> <span class="toc-text">09 自动程序</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#10-%E8%A7%84%E5%88%99%E7%B1%BB%E6%80%AA%E8%B0%88"><span class="toc-number">11.</span> <span class="toc-text">10 规则类怪谈</span></a></li></ol>
+        </div>
+      </div>
+    </cosy-drag-box>
+    
+  </div>
+
+</div>
+
+<script>
+  window.page = {
+    use: ''
+  }
+  window.katex = {
+    enable: "",
+    jsCdn: "//cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.js",
+    cssCdn: "//cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.css"
+  }
+  window.mermaid = {
+    enable: "",
+    theme: "",
+    cdn: "//cdn.jsdelivr.net/npm/mermaid@10.4.0/dist/mermaid.min.js",
+  }
+  window.valine = {
+    enable: "",
+    appId: 'yourValineAppId',
+    appKey: 'yourValineAppKey',
+    avatar: 'monsterid',
+    cdn: '//unpkg.com/valine@latest/dist/Valine.min.js',
+    serverURLs: ''
+  };
+</script>
+
+
+<script src="/js/5bf38c1b.js"></script>
+
+  </main>
+</body>
+
+<script>
+  window.theme = {
+    color: 'hsl(238,50%,56%)'
+  }
+</script>
+
+
+<script src="/js/82a967e8.js"></script>
+
+
+</html>
