@@ -3,14 +3,14 @@ title: VEX机器人程序
 author: Chose_B
 date: 2024-01-30
 ---
-# 00 序言
-## 0.1 语言基础说明  
+# 序言
+## 语言基础说明  
 
 VEX程序可以支持 _C++_ 和 _python_ ，但是在这里只涉及 ___C++___     
 如果有 _python_ 基础而没有 _C++_ 基础，建议访问[菜鸟教程](https://www.runoob.com/cplusplus/cpp-tutorial.html)来学习语法知识  
 如果编程基础近似为0而对编程有兴趣的同学，建议先在[洛谷题单](https://www.luogu.com.cn/training/list)完成入门系列之后再来看VEX的教程
 
-## 0.2 编译环境
+## 编译环境
 支持VEX程序的软件有 [vscode](https://code.visualstudio.com/sha/download?build=stable&os=win32-x64-user) 、_VEXcode pro v5_ 等，本教程只介绍 ___vscode___ 的使用  
 点击此处的链接可以下载到 _vscode_ 的安装包  
 打开 _vscode_ 之后，需要下载拓展 _chinese_ , _c/c++_ , _VEX Robotics_   
@@ -20,7 +20,7 @@ VEX程序可以支持 _C++_ 和 _python_ ，但是在这里只涉及 ___C++___
 下载 _git_ 只需要跟着 _vscode_ 的窗口一通按就好了，如何使用请看网上的[教程](https://www.runoob.com/git/git-tutorial.html)  
 可以点击 _打开文件夹_ 来开始你的代码
 
-## 0.3 硬件条件
+## 硬件条件
 
 ### 主机  
 ![主机图](https://picdl.sunbangyan.cn/2023/11/13/30bda85ee2d0a3bc594fb858377d6b63.png)  
@@ -45,18 +45,18 @@ VEX程序可以支持 _C++_ 和 _python_ ，但是在这里只涉及 ___C++___
 ### 气泵   
 ![气泵图](https://picst.sunbangyan.cn/2023/11/13/04aceda6d70c2f7adc2594376fa5c41b.jpg)  
 
-## 0.4 VEX社区
+## VEX社区
     VEX在[B站](https://www.bilibili.com/)中并不算极小众的，其中更新的比较多的up主是[TXTaylor297992](https://space.bilibili.com/1684280853)   
     此外，VEX有[中文官方论坛](https://vexforum.cn/)，在这里可以下载到官方给出的规则文档和场地拼接的文档
 
-# 01 面向对象
-## 1.1 面向对象思维的介绍及引入
+# 面向对象
+## 面向对象思维的介绍及引入
 [wiki介绍](https://zh.wikipedia.org/wiki/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1)     
 程序设计思维中，与 ___面向对象___ 相对的概念叫做 ___面向过程___ 。     
 后者考虑问题是通常把问题拆分成几个小问题，在编写程序中对应的行为一般有编写若干个函数。由于OI中一般只要考虑一个主问题即可，所以面向对象在OI中出现较多     
 前者则是将一个个功能封装进 _对象_ 中，其对应的行为以实现 _类(class)_ 为典型。这种程序设计的思维在 项目化编程 中有极大的优点——重用性、灵活性和扩展性 高
 在此处，我们将从[class](https://www.runoob.com/cplusplus/cpp-classes-objects.html)的声明、定义、使用来入手，切实的感受 ___面向对象___ 的代码风格
-## 1.2 classの定义     
+## classの定义     
 [![菜鸟教程给出的定义结构](https://www.runoob.com/wp-content/uploads/2015/05/cpp-classes-objects-2020-12-10-11.png)](https://www.runoob.com/cplusplus/cpp-classes-objects.html)
 ### 类 及 类名
 给类取名的时候，可以参照[struct](https://www.runoob.com/cplusplus/cpp-data-structures.html)，命名规则和变量一致
@@ -301,12 +301,12 @@ class node{
 	![01-6-e3](https://picst.sunbangyan.cn/2023/11/13/4ed72494d898de9ac52b3f04d58b1062.png)     
    当然，我会在接下来的章节来挑选重点的函数来讲解。有兴趣有余力的同学可以根据这个方法自行探究。     
 
-# 02 主机(brain)与手柄(Controller)
-## 2.1 主机、手柄、电脑之间的硬件连接     
+# 主机(brain)与手柄(Controller)
+## 主机、手柄、电脑之间的硬件连接     
 ![连线图](https://picdl.sunbangyan.cn/2023/11/13/c74888fd0e1f50f7ab819dddddd89bae.png)     
-## 2.2 创建新的VEX工程文件、文件标题规范、文件储存位置     
+## 创建新的VEX工程文件、文件标题规范、文件储存位置     
 从VEX插件中 顺次点击 `new project -> v5 -> c++ -> competition template -> 命名项目名字 -> create`，一个新的VEX工程文件就创建了
-## 2.3 Brain.functions()
+## Brain.functions()
 鉴于LXB水平有限，所以这里只讲一部分重要的函数
 ### 定义
 ```cpp
@@ -349,7 +349,7 @@ extern brain Brain;
     这里的`print()`函数的使用和`printf()`无异     
     `printAt()`添加了参数`x`、`y`,含义是在主机屏幕输出时开始的坐标     
     `drawPixel`是在屏幕的(x,y)处绘制一个像素点
-## 2.4 Controller.functions()
+## Controller.functions()
 ### 定义
 ```cpp
 // robot-config.h
@@ -427,8 +427,8 @@ void Dipan(){
 }
 ```
 
-# 03 电机(motor)与运动
-## 3.1 声明     
+# 电机(motor)与运动
+## 声明     
 `motor`的构造函数有3个参数(建议都填入),分别是`index`、`gears`、`reverse`。
 ```cpp
 // vex_motor.h
@@ -453,7 +453,7 @@ motor MotorLB = motor(PORT2,radio18_1,false);
 motor MotorRF = motor(PORT3,radio18_1,true);
 motor MotorRB = motor(PORT4,radio18_1,true);
 ```
-## 3.2 电机 与 手动控制程序     
+## 电机 与 手动控制程序     
 ### 电机转动     
 + `spin()`     
    此函数会让电机以指定速度旋转。     
@@ -524,8 +524,8 @@ motor MotorRB = motor(PORT4,radio18_1,true);
   可填入单位 摄氏度(`celsius`)     
 * ...
 
-# 04 陀螺仪 与 自动转弯
-## 4.1 声明、命名
+# 陀螺仪 与 自动转弯
+## 声明、命名
     需要填入的参数仅有端口
     ```cpp
     // vex_imu.h
@@ -536,7 +536,7 @@ motor MotorRB = motor(PORT4,radio18_1,true);
     // robot-config.cpp
     inertial ine = inertial(PORT11);
     ```
-## 4.2 初始化
+## 初始化
 类似于`motor`中的`position()`，对陀螺仪初始化是必要的。
 ```cpp
 // your_file.cpp
@@ -552,7 +552,7 @@ void reset(){
   Brain.Timer.reset();
 }
 ```
-## 4.3 数据检测
+## 数据检测
 仅介绍最常用的`heading()`,其他函数仅作涉及
 
  * `heading()`
@@ -567,7 +567,7 @@ void reset(){
     
  * `rotation()`  
     获取仰角
-## 4.4 自动程序中的转弯问题     
+## 自动程序中的转弯问题     
 自动程序中，是不可以通过操作手柄来给机器人输入数据的。因此，机器人在自动赛时段的运动完全依靠程序的预设。     
 *如何让机器人旋转到我们需要的方向？*     
 
@@ -608,14 +608,14 @@ void turn(int deg){
 }
 ```
 `PID算法`将在[第7章节](/README.md/#07-pid精确控制算法)中详细介绍其优缺点。
-## 4.5 画外吐槽     
+## 画外吐槽     
 我非常讨厌陀螺仪     
 因为它带给我的回忆除了出bug就是掉链子     
 
 [陀螺仪发癫珍贵录像](https://www.bilibili.com/video/BV1FW4y1V7af)
 
-# 05 气泵
-## 5.1 定义、命名     
+# 气泵
+## 定义、命名     
 气泵的程序其实是最简单的，只不过定义和电机或者传感器都有点区别
 ```cpp
 // vex_triport.h
@@ -639,12 +639,12 @@ digital_out( triport::port &port );
 digital_out pne ( Brain.ThreeWirePort.A );
 ```
 
-## 5.2 实物介绍     
+## 实物介绍     
 气泵的程序很简单，但是气泵的部件比电机复杂的多     
 ![](image/05-2-e1.png)     
 图中的结构中，通过程序所能操作的仅仅是 发送到/接受数据于 `换向阀驱动器` ，从而改变换向阀联通的状态。     
 机器人上是否使用气泵，需要考虑机械师的技术水平。因为程序能在气泵上做的事情太少太简单了。
-## 5.3 functions
+## functions
 * `set()`
   设置气泵的伸缩状态。
   ```cpp
@@ -660,13 +660,13 @@ digital_out pne ( Brain.ThreeWirePort.A );
   读取气泵的状态     
   `pne.set(true)`后，value的返回值就会变为`true`，反之亦然。
 
-# 06 视觉传感器
+# 视觉传感器
 1. 定义、命名
 2. 初始化
 3. 颜色设置 和 识别机制的介绍
 4. 返回值
 
-# 07 *PID精确控制算法
+# *PID精确控制算法
 1. 定义
 2. 原理介绍
 3. 使用方法
@@ -675,21 +675,21 @@ digital_out pne ( Brain.ThreeWirePort.A );
    缺点就是把pid的算法中用于前进的控制中会大大降低前进的效率     
    这种缺点只会体现在***需要停止的运动***中，比如说**前进**、**转弯**这类运动中。pid最适合的应用应该是 ___一直维持某种状态___ 的情况下，例如 __平衡车的平衡__ , 这时pid的运行是贯彻平衡车运动的始终的，也就不存在所谓**超时**的问题了。
 
-# 08 手动程序
+# 手动程序
 1. 与操作手对接
 2. 底盘方案
    * 左前进右旋转
    * 万向底盘
    * 无头模式
 
-# 09 自动程序
+# 自动程序
 1. 自动赛规则
 2. 前进控制
 3. 转弯控制
 4. 完成自动赛任务
 5. 多备案 + 耐心
 
-# 10 规则类怪谈
+# 规则类怪谈
 1. 码风要求
 2. 注释规范化
 3. 请参与github的更新
