@@ -53,5 +53,5 @@ valine:
 #Home Weather Card - Wind Weather, Free Registration API Please visit: https://id.qweather.com/#/register
 weather:
   enable: true
-  cityCode: 101190101
-  appKey: 6f89c60ce1714fa58018b5489aa697e5
+  cityCode: 101210613
+  appKey: chose-b-log-weather
