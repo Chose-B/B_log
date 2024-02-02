@@ -1,5 +1,7 @@
 ---
 title: Hello World
+categories: 
+  - README
 use: katex
 ---
 本博客使用[Hexo](https://hexo.io/)搭建  

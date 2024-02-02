@@ -2,6 +2,7 @@
 title: VEX机器人程序
 author: Chose_B
 date: 2024-01-30
+categories: VEX
 use: katex
 ---
 # 序言
