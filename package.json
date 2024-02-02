@@ -14,6 +14,7 @@
   },
   "dependencies": {
     "hexo": "^7.1.1",
+    "hexo-admonition": "^1.1.2",
     "hexo-algoliasearch-next": "^1.0.2",
     "hexo-generator-archive": "^2.0.0",
     "hexo-generator-category": "^2.0.0",
