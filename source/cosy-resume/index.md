@@ -25,4 +25,7 @@ education:
   - school: 台州市路桥中学
     time: 2022-2025
 
+workExp: 
+  - inc: STI-lz
+    time: 2023.4.27 ~ 至今
 ---
