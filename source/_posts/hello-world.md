@@ -11,6 +11,12 @@ use: katex
 天气服务:[和风天气](https://dev.qweather.com/docs/start/)
 
 ---
+把本地的博客文件推送到远程端:
+```bash
+git push "https://gitlab.com/chose_b_log/b_log.git"
+```
+
+---
 ## 吐槽板
 ##### 2024-2-2
 cosy所支持的$$katex$$有一个奇怪的问题:  
