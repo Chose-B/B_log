@@ -20,6 +20,8 @@ about:
 skill:
   - 浅会一点C++ 。不过不再参加OI之后水平就一直原地踏步了
   - 偶尔会剪视频，不过技术还不够成熟
+  - 来玩 DDraceNetwork 吗
+  - めぐみぃ ! (この素晴らしいチョーカーに祝福を!)
 
 education:
   - school: 台州市路桥中学
@@ -28,4 +30,7 @@ education:
 workExp: 
   - inc: STI-lz
     time: 2023.4.27 ~ 至今
+  - inc: 路中机器人社
+    time: 2022.7 ~ 至今
+
 ---
