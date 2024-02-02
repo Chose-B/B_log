@@ -1,7 +1,7 @@
 ---
 title: 个人简历
 layout: cosy-resume
-avatar: /img/Chose-B.png
+avatar: /img/Chose-B.jpg
 name: Chose_B
 role: Full Stack
 email: L666no6@163.com
