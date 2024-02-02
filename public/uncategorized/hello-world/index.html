@@ -164,6 +164,20 @@
     </div>
     <div class="right">
       
+      <cosy-tooltip id="toc-show-button" placement="left">
+        <span slot="content">
+          <span>显示 / 隐藏 文章目录</span>
+          <cosy-short-key>]</cosy-short-key>
+        </span>
+        <cosy-icon>
+          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 20 20">
+            <g fill="none">
+              <path d="M4 4c-1.104-.019-2 .896-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2H4zM3 6a1 1 0 0 1 1-1h2.995v10H4a1 1 0 0 1-1-1V6zm4.995 9V5h8.004a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H7.995z" fill="currentColor"></path>
+            </g>
+          </svg>
+        </cosy-icon>
+      </cosy-tooltip>
+      
     </div>
   </header>
   <div class="content">
@@ -174,11 +188,21 @@
           <!-- 文章标题 -->
           <h1 class="post-title">Hello World</h1>
           <div class="last-updated">
-            上次更新: 2024-02-02 10:57:43
+            上次更新: 2024-02-02 11:20:34
           </div>
           <!-- 文章 -->
           <p>本博客使用<a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>搭建<br>向Hexo反馈问题<a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a>或者提问<a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.<br>模板使用<a target="_blank" rel="noopener" href="https://mozzie.cn/posts/59577/">cosy</a></p>
 <p>天气服务:<a target="_blank" rel="noopener" href="https://dev.qweather.com/docs/start/">和风天气</a></p>
+<hr>
+<h2 id="吐槽板"><a href="#吐槽板" class="headerlink" title="吐槽板"></a>吐槽板</h2><h5 id="2024-2-2"><a href="#2024-2-2" class="headerlink" title="2024-2-2"></a>2024-2-2</h5><p>cosy所支持的$$katex$$有一个奇怪的问题:<br>众所周知,在$$katex$$中,行间公式应该用<code>$$...$$</code>打出，而行内公式应该用<code>$...$</code>打出<br>然而在这里如果你试图用<code>$...$</code>表示行间公式就会这样:  </p>
+<blockquote>
+<p>LOOK: $e^{i \pi}&#x3D;-1$</p>
+</blockquote>
+<p>好吧，如果换成<code>$$...$$</code>，也就是和行间公式一样<br>问题就解决了 :(  </p>
+<blockquote>
+<p>LOOK: $$e^{i \pi}&#x3D;-1$$</p>
+</blockquote>
+<p>很怪吧？<br>我也没办法，将就着用好了 :(((((((((  </p>
 
           <div class="post-tags">
             <!-- 文章tags -->
@@ -191,6 +215,25 @@
       </div>
     </main>
     <!-- toc -->
+    
+    <cosy-drag-box id="toc-drag-box" trigger="left" min-width="220" uid="toc-box">
+      <div class="meta-container">
+        <div class="toc-wrapper cosy-scrollbar">
+          <p class="catalog">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24">
+              <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 6h16"></path>
+                <path d="M4 12h16"></path>
+                <path d="M4 18h12"></path>
+              </g>
+            </svg>
+            <span>目录</span>
+          </p>
+          <!-- 文章toc -->
+          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%90%E6%A7%BD%E6%9D%BF"><span class="toc-number">1.</span> <span class="toc-text">吐槽板</span></a></li></ol>
+        </div>
+      </div>
+    </cosy-drag-box>
     
   </div>
 

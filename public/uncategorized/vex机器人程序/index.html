@@ -188,7 +188,7 @@
           <!-- 文章标题 -->
           <h1 class="post-title">VEX机器人程序</h1>
           <div class="last-updated">
-            上次更新: 2024-01-31 20:04:19
+            上次更新: 2024-02-02 11:12:05
           </div>
           <!-- 文章 -->
           <h1 id="序言"><a href="#序言" class="headerlink" title="序言"></a>序言</h1><h2 id="语言基础说明"><a href="#语言基础说明" class="headerlink" title="语言基础说明"></a>语言基础说明</h2><p>VEX程序可以支持 <em>C++</em> 和 <em>python</em> ，但是在这里只涉及 <em><strong>C++</strong></em><br>如果有 <em>python</em> 基础而没有 <em>C++</em> 基础，建议访问<a target="_blank" rel="noopener" href="https://www.runoob.com/cplusplus/cpp-tutorial.html">菜鸟教程</a>来学习语法知识<br>如果编程基础近似为0而对编程有兴趣的同学，建议先在<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/training/list">洛谷题单</a>完成入门系列之后再来看VEX的教程</p>
@@ -664,11 +664,11 @@ digital_out <span class="token function">pne</span> <span class="token punctuati
 </blockquote>
 <h4 id="定义-2"><a href="#定义-2" class="headerlink" title="定义"></a>定义</h4><p>积分算法是对比例算法的补充<br>还是<code>量取1L水</code>的例子,但是这次桶破了一个洞:</p>
 <blockquote>
-<p>为了方便说明，不妨假设每秒的漏水为$10ml$ , $k_p&#x3D;0.8$</p>
+<p>为了方便说明，不妨假设每秒的漏水为$$10ml$$ , $$k_p&#x3D;0.8$$</p>
 </blockquote>
-<p>你还是用<code>比例算法</code>的思想去倒水<br>然而在你加水加到了$1ml$时，你会发现此时水位已经不再上涨<br>这是因为此时你加水的速度是<br>$$ (1000-920)\times0.8&#x3D;10 (ml) $$<br>和漏水的速度持平</p>
-<p>如果你可以关注到水位一直都在$920ml$处这个现象的话,你可以尝试根据累计水位和目标之间的偏差来计算你到底应该额外加入多少的水<br>记积分算法的输出值为<code>I</code>,那么:<br>$$ I \propto \int_{0}^{T} error·dt $$<br>即<br>$$ I &#x3D; k_i · \int_{0}^{T} error·dt $$<br>其中$k_i$为我们引入的常量<code>积分系数</code><br>$T$为pid算法从开始运行到当前时间的计时</p>
-<h4 id="离散化"><a href="#离散化" class="headerlink" title="离散化"></a>离散化</h4><p>显然,$\lim_{dt \to 0^{+}}$的情况在现实中是无法实现的,我们只能采取近似的计算方法<br>积分算法的理论计算式离散化后可以用下式计算:<br>$$ I &#x3D; k_i · \sum_{t&#x3D;0}^{T} error·\Delta t $$<br>用C++实现:</p>
+<p>你还是用<code>比例算法</code>的思想去倒水<br>然而在你加水加到了$$1ml$$时，你会发现此时水位已经不再上涨<br>这是因为此时你加水的速度是<br>$$ (1000-920)\times0.8&#x3D;10 (ml) $$<br>和漏水的速度持平</p>
+<p>如果你可以关注到水位一直都在$$920ml$$处这个现象的话,你可以尝试根据累计水位和目标之间的偏差来计算你到底应该额外加入多少的水<br>记积分算法的输出值为<code>I</code>,那么:<br>$$ I \propto \int_{0}^{T} error·dt $$<br>即<br>$$ I &#x3D; k_i · \int_{0}^{T} error·dt $$<br>其中$$k_i$$为我们引入的常量<code>积分系数</code><br>$$T$$为pid算法从开始运行到当前时间的计时</p>
+<h4 id="离散化"><a href="#离散化" class="headerlink" title="离散化"></a>离散化</h4><p>显然,$$\lim_{dt \to 0^{+}}$$的情况在现实中是无法实现的,我们只能采取近似的计算方法<br>积分算法的理论计算式离散化后可以用下式计算:<br>$$ I &#x3D; k_i · \sum_{t&#x3D;0}^{T} error·\Delta t $$<br>用C++实现:</p>
 <pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp">I <span class="token operator">=</span> I <span class="token operator">+</span> ki<span class="token operator">*</span>error<span class="token operator">*</span><span class="token punctuation">(</span>time_now <span class="token operator">-</span> time_last<span class="token punctuation">)</span><span class="token punctuation">;</span>
 time_last <span class="token operator">=</span> time_now<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <h4 id="积分限制器"><a href="#积分限制器" class="headerlink" title="积分限制器"></a>积分限制器</h4><p>引入积分算法后可能出现以下情况:  </p>
@@ -676,7 +676,7 @@ time_last <span class="token operator">=</span> time_now<span class="token punct
 <li>以电机为例，在电机的启停或设定值大幅变化时，系统在较短时间内产生了很大的偏差。此时积分迅速积累，就会造成控制量输出远远大于电机的极限输入控制量，从而会引起很大的超调，甚至会产生震荡。  </li>
 <li>积分饱和：当系统一直存在一个方向的偏差时，积分会不断增大，会造成控制量进入饱和区，一旦出现反向的偏差时，需要很长时间才能推出饱和区，而去响应反向偏差。也以电机为例，电机在积分饱和时，电机响应延时较大，会出现电机超出目标位置，需来回调整数次才能稳定。</li>
 </ol>
-<p>此时就有必要限制积分算法的输出<br>如果$I$超出了某一预定的范围$[-I_{max},I_{max}]$,可以对I的大小进行限制</p>
+<p>此时就有必要限制积分算法的输出<br>如果$$I$$超出了某一预定的范围$$[-I_{max},I_{max}]$$,可以对I的大小进行限制</p>
 <pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">void</span> <span class="token function">I_limit</span><span class="token punctuation">(</span><span class="token keyword">float</span><span class="token operator">&amp;</span> I<span class="token punctuation">,</span><span class="token keyword">float</span> I_max<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
     <span class="token keyword">if</span> <span class="token punctuation">(</span>I<span class="token operator">></span>I_max<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
         I <span class="token operator">=</span> I_max<span class="token punctuation">;</span>
@@ -694,15 +694,15 @@ time_last <span class="token operator">=</span> time_now<span class="token punct
 <p>立筷子还不简单,你轻易的让筷子保持了竖直<br>正当我们放松的时候，一阵阴风袭来，把筷子稍稍吹歪了  </p>
 <ul>
 <li>只用比例算法？<br>筷子才歪这么一点，我都不需要怎么动哎<br>然后很快筷子就倒了</li>
-<li>加上积分算法?<br>本来筷子是保持平衡的，也就是$output&#x3D;P+I&#x3D;0$<br>$\because P&#x3D;K_p·error&#x3D;0$<br>$\therefore I_{t&#x3D;0}&#x3D;0$<br>此时积分算法能起到的效果和比例算法没有什么差别了</li>
+<li>加上积分算法?<br>本来筷子是保持平衡的，也就是<br>$$output&#x3D;P+I&#x3D;0$$<br>$$\because P&#x3D;K_p·error&#x3D;0$$<br>$$\therefore I_{t&#x3D;0}&#x3D;0$$<br>此时积分算法能起到的效果和比例算法没有什么差别了</li>
 </ul>
-<p>看来我们需要新的方法<br>立筷子之所以容易失败，是因为筷子只要有一点偏差，如果不迅速的加以修正，筷子就会快速的倒下<br>如果在$P$和$I$的基础上，再增加一项$D$，使得<br>$$ D \propto 筷子高度的瞬时变化率 $$<br>问题就可以迎刃而解<br>注意到<code>微分</code>是衡量<code>瞬时变化率</code>的很好的数学工具，于是我们可以写出:<br>$$ D \propto \tfrac{d}{dt} error $$<br>即<br>$$ D &#x3D; k_d·\tfrac{d}{dt} error $$<br>其中$k_d$为我们引入的<code>微分系数</code></p>
-<h4 id="离散化-1"><a href="#离散化-1" class="headerlink" title="离散化"></a>离散化</h4><p>同样的，由于$\lim_{dt \to 0^{+}}$在现实中无法实现，微分算法的计算同样需要离散化<br>$$ D &#x3D; k_d·\tfrac{ \Delta error }{ \Delta t } $$<br>用c++实现：</p>
+<p>看来我们需要新的方法<br>立筷子之所以容易失败，是因为筷子只要有一点偏差，如果不迅速的加以修正，筷子就会快速的倒下<br>如果在$$P$$和$$I$$的基础上，再增加一项$$D$$，使得<br>$$ D \propto 筷子高度的瞬时变化率 $$<br>问题就可以迎刃而解<br>注意到<code>微分</code>是衡量<code>瞬时变化率</code>的很好的数学工具，于是我们可以写出:<br>$$ D \propto \tfrac{d}{dt} error $$<br>即<br>$$ D &#x3D; k_d·\tfrac{d}{dt} error $$<br>其中$$k_d$$为我们引入的<code>微分系数</code></p>
+<h4 id="离散化-1"><a href="#离散化-1" class="headerlink" title="离散化"></a>离散化</h4><p>同样的，由于$$\lim_{dt \to 0^{+}}$$在现实中无法实现，微分算法的计算同样需要离散化<br>$$ D &#x3D; k_d·\tfrac{ \Delta error }{ \Delta t } $$<br>用c++实现：</p>
 <pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp">D <span class="token operator">=</span> kd<span class="token operator">*</span><span class="token punctuation">(</span>error<span class="token operator">-</span>error_last<span class="token punctuation">)</span><span class="token operator">/</span><span class="token punctuation">(</span>time_now<span class="token operator">-</span>time_last<span class="token punctuation">)</span><span class="token punctuation">;</span>
 error_last <span class="token operator">=</span> error<span class="token punctuation">;</span>
 time_last <span class="token operator">=</span> time_now<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<h2 id="综合使用"><a href="#综合使用" class="headerlink" title="综合使用"></a>综合使用</h2><p>使用$P$、$I$、$D$三种算法，足以满足大多数输出的控制了<br>总输出值的理想计算式:<br>$$ output &#x3D; P + I + D $$<br>如果全部带入:<br>$$ output &#x3D; k_p·error + k_i·\int_{0}^{T}error·dt + k_d·\tfrac{d}{dt}error $$<br>离散化后可以用C++实现<br>$$ output &#x3D; k_p·error + k_i·\sum_{t&#x3D;0}^{T}error·\Delta t + k_d·\tfrac{ \Delta error }{ \Delta t }$$</p>
-<h2 id="调试参数"><a href="#调试参数" class="headerlink" title="调试参数"></a>调试参数</h2><p>实践中，真正折磨人的不是PID算法的理解，而是PID细节的实现和参数的调节<br>对于$k_p$ $k_i$ $k_d$三个参数，获得的办法只有:  </p>
+<h2 id="综合使用"><a href="#综合使用" class="headerlink" title="综合使用"></a>综合使用</h2><p>使用$$P$$、$$I$$、$$D$$三种算法，足以满足大多数输出的控制了<br>总输出值的理想计算式:<br>$$ output &#x3D; P + I + D $$<br>如果全部带入:<br>$$ output &#x3D; k_p·error + k_i·\int_{0}^{T}error·dt + k_d·\tfrac{d}{dt}error $$<br>离散化后可以用C++实现<br>$$ output &#x3D; k_p·error + k_i·\sum_{t&#x3D;0}^{T}error·\Delta t + k_d·\tfrac{ \Delta error }{ \Delta t }$$</p>
+<h2 id="调试参数"><a href="#调试参数" class="headerlink" title="调试参数"></a>调试参数</h2><p>实践中，真正折磨人的不是PID算法的理解，而是PID细节的实现和参数的调节<br>对于$$k_p$$ $$k_i$$ $$k_d$$三个参数，获得的办法只有:  </p>
 <ul>
 <li>不断实验</li>
 <li><del>玄学</del> 直觉</li>
