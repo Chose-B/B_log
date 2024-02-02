@@ -188,13 +188,13 @@
           <!-- 文章标题 -->
           <h1 class="post-title">Hello World</h1>
           <div class="last-updated">
-            上次更新: 2024-02-02 11:20:34
+            上次更新: 2024-02-02 12:19:02
           </div>
           <!-- 文章 -->
           <p>本博客使用<a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>搭建<br>向Hexo反馈问题<a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a>或者提问<a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.<br>模板使用<a target="_blank" rel="noopener" href="https://mozzie.cn/posts/59577/">cosy</a></p>
 <p>天气服务:<a target="_blank" rel="noopener" href="https://dev.qweather.com/docs/start/">和风天气</a></p>
 <hr>
-<h2 id="吐槽板"><a href="#吐槽板" class="headerlink" title="吐槽板"></a>吐槽板</h2><h5 id="2024-2-2"><a href="#2024-2-2" class="headerlink" title="2024-2-2"></a>2024-2-2</h5><p>cosy所支持的$$katex$$有一个奇怪的问题:<br>众所周知,在$$katex$$中,行间公式应该用<code>$$...$$</code>打出，而行内公式应该用<code>$...$</code>打出<br>然而在这里如果你试图用<code>$...$</code>表示行间公式就会这样:  </p>
+<h2 id="吐槽板"><a href="#吐槽板" class="headerlink" title="吐槽板"></a>吐槽板</h2><h5 id="2024-2-2"><a href="#2024-2-2" class="headerlink" title="2024-2-2"></a>2024-2-2</h5><p>cosy所支持的$$katex$$有一个奇怪的问题:<br>众所周知,在$$katex$$中,行间公式应该用<code>$$ $$...$$ $$</code>打出，而行内公式应该用<code>$...$</code>打出<br>然而在这里如果你试图用<code>$...$</code>表示行间公式就会这样:  </p>
 <blockquote>
 <p>LOOK: $e^{i \pi}&#x3D;-1$</p>
 </blockquote>
@@ -241,7 +241,7 @@
 
 <script>
   window.page = {
-    use: ''
+    use: 'katex'
   }
   window.katex = {
     enable: "",

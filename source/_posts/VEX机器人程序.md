@@ -709,9 +709,9 @@ $$ (1000-920)\times0.8=10 (ml) $$
 
 如果你可以关注到水位一直都在$$920ml$$处这个现象的话,你可以尝试根据累计水位和目标之间的偏差来计算你到底应该额外加入多少的水  
 记积分算法的输出值为`I`,那么:
-$$ I \propto \int_{0}^{T} error·dt $$
+$$ I \propto \int_{0}^{T} error·{\rm d}t $$
 即
-$$ I = k_i · \int_{0}^{T} error·dt $$
+$$ I = k_i · \int_{0}^{T} error·{\rm d}t $$
 其中$$k_i$$为我们引入的常量`积分系数`  
 $$T$$为pid算法从开始运行到当前时间的计时
 #### 离散化
@@ -773,8 +773,8 @@ $$ D = k_d·\tfrac{d}{dt} error $$
 其中$$k_d$$为我们引入的`微分系数`
 #### 离散化
 同样的，由于$$\lim_{dt \to 0^{+}}$$在现实中无法实现，微分算法的计算同样需要离散化  
-$$ D = k_d·\tfrac{ \Delta error }{ \Delta t } $$
-用c++实现：
+$$ D = k_d·\tfrac{ \Delta error }{ \Delta t } $$  
+用c++实现:  
 ```cpp
 D = kd*(error-error_last)/(time_now-time_last);
 error_last = error;
