@@ -48,8 +48,8 @@ VEX程序可以支持 _C++_ 和 _python_ ，但是在这里只涉及 ___C++___
 ![气泵图](https://picst.sunbangyan.cn/2023/11/13/04aceda6d70c2f7adc2594376fa5c41b.jpg)  
 
 ## VEX社区
-    VEX在[B站](https://www.bilibili.com/)中并不算极小众的，其中更新的比较多的up主是[TXTaylor297992](https://space.bilibili.com/1684280853)   
-    此外，VEX有[中文官方论坛](https://vexforum.cn/)，在这里可以下载到官方给出的规则文档和场地拼接的文档
+VEX在[B站](https://www.bilibili.com/)中并不算极小众的，其中更新的比较多的up主是[TXTaylor297992](https://space.bilibili.com/1684280853)   
+此外，VEX有[中文官方论坛](https://vexforum.cn/)，在这里可以下载到官方给出的规则文档和场地拼接的文档
 
 # 面向对象
 ## 面向对象思维的介绍及引入
@@ -359,7 +359,7 @@ extern controller Controller;
 ```
 和 `brain` 的定义一样平淡
 ### 按钮     
-![](image/01-4-2-2.jpg)     
+![手柄正面图](https://picdm.sunbangyan.cn/2023/11/13/968d794a5f0ca8bc9c740b824c06866b.jpg)     
 图中按钮可用的共有10个，分别是：
     - ButtonLeft
     - ButtonRight
@@ -521,23 +521,23 @@ motor MotorRB = motor(PORT4,radio18_1,true);
 * `void resetPosition()`     
   重置 `position()`的返回值     
   重置需要一小段时间，重置时尽量保持电机的静止
-* `double temperature( temperatureUnits units );`     
+* `double temperature( temperatureUnits units )`     
   返回电机此时的温度     
   可填入单位 摄氏度(`celsius`)     
 * ...
 
 # 陀螺仪 与 自动转弯
 ## 声明、命名
-    需要填入的参数仅有端口
-    ```cpp
-    // vex_imu.h
-    inertial( int32_t index, turnType dir = turnType::right );  
-    ```
-    声明比`motor`简单
-    ```cpp
-    // robot-config.cpp
-    inertial ine = inertial(PORT11);
-    ```
+需要填入的参数仅有端口
+```cpp
+// vex_imu.h
+inertial( int32_t index, turnType dir = turnType::right );  
+```
+声明比`motor`简单
+```cpp
+// robot-config.cpp
+inertial ine = inertial(PORT11);
+```
 ## 初始化
 类似于`motor`中的`position()`，对陀螺仪初始化是必要的。
 ```cpp
@@ -705,7 +705,7 @@ $$ P = k_p · error $$
 你还是用`比例算法`的思想去倒水  
 然而在你加水加到了$$920ml$$时，你会发现此时水位已经不再上涨  
 这是因为此时你加水的速度是
-$$ (1000-920)\times0.8=10 (ml) $$
+$$ (1000-920)\times0.8=10 \space (ml) $$
 和漏水的速度持平
 
 如果你可以关注到水位一直都在$$920ml$$处这个现象的话,你可以尝试根据累计水位和目标之间的偏差来计算你到底应该额外加入多少的水  
