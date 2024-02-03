@@ -227,7 +227,7 @@
           <!-- 文章标题 -->
           <h1 class="post-title">VEX机器人程序</h1>
           <div class="last-updated">
-            上次更新: 2024-02-02 20:06:32
+            上次更新: 2024-02-03 20:00:02
           </div>
           <!-- 文章 -->
           <h1 id="序言"><a href="#序言" class="headerlink" title="序言"></a>序言</h1><h2 id="语言基础说明"><a href="#语言基础说明" class="headerlink" title="语言基础说明"></a>语言基础说明</h2><p>VEX程序可以支持 <em>C++</em> 和 <em>python</em> ，但是在这里只涉及 <em><strong>C++</strong></em><br>如果有 <em>python</em> 基础而没有 <em>C++</em> 基础，建议访问<a target="_blank" rel="noopener" href="https://www.runoob.com/cplusplus/cpp-tutorial.html">菜鸟教程</a>来学习语法知识<br>如果编程基础近似为0而对编程有兴趣的同学，建议先在<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/training/list">洛谷题单</a>完成入门系列之后再来看VEX的教程</p>
@@ -240,9 +240,7 @@
 <h3 id="传感器"><a href="#传感器" class="headerlink" title="传感器"></a>传感器</h3><p><img src="https://picdl.sunbangyan.cn/2023/11/13/c74888fd0e1f50f7ab819dddddd89bae.png" alt="传感器图">  </p>
 <h3 id="电机"><a href="#电机" class="headerlink" title="电机"></a>电机</h3><p><img src="https://picdm.sunbangyan.cn/2023/11/13/b86c1e9a14d043aec8aacf6a918774dc.jpg" alt="电机图">  </p>
 <h3 id="气泵"><a href="#气泵" class="headerlink" title="气泵"></a>气泵</h3><p><img src="https://picst.sunbangyan.cn/2023/11/13/04aceda6d70c2f7adc2594376fa5c41b.jpg" alt="气泵图">  </p>
-<h2 id="VEX社区"><a href="#VEX社区" class="headerlink" title="VEX社区"></a>VEX社区</h2><pre><code>VEX在[B站](https://www.bilibili.com/)中并不算极小众的，其中更新的比较多的up主是[TXTaylor297992](https://space.bilibili.com/1684280853)   
-此外，VEX有[中文官方论坛](https://vexforum.cn/)，在这里可以下载到官方给出的规则文档和场地拼接的文档
-</code></pre>
+<h2 id="VEX社区"><a href="#VEX社区" class="headerlink" title="VEX社区"></a>VEX社区</h2><p>VEX在<a target="_blank" rel="noopener" href="https://www.bilibili.com/">B站</a>中并不算极小众的，其中更新的比较多的up主是<a target="_blank" rel="noopener" href="https://space.bilibili.com/1684280853">TXTaylor297992</a><br>此外，VEX有<a target="_blank" rel="noopener" href="https://vexforum.cn/">中文官方论坛</a>，在这里可以下载到官方给出的规则文档和场地拼接的文档</p>
 <h1 id="面向对象"><a href="#面向对象" class="headerlink" title="面向对象"></a>面向对象</h1><h2 id="面向对象思维的介绍及引入"><a href="#面向对象思维的介绍及引入" class="headerlink" title="面向对象思维的介绍及引入"></a>面向对象思维的介绍及引入</h2><p><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1">wiki介绍</a><br>程序设计思维中，与 <em><strong>面向对象</strong></em> 相对的概念叫做 <em><strong>面向过程</strong></em> 。<br>后者考虑问题是通常把问题拆分成几个小问题，在编写程序中对应的行为一般有编写若干个函数。由于OI中一般只要考虑一个主问题即可，所以面向对象在OI中出现较多<br>前者则是将一个个功能封装进 <em>对象</em> 中，其对应的行为以实现 <em>类(class)</em> 为典型。这种程序设计的思维在 项目化编程 中有极大的优点——重用性、灵活性和扩展性 高<br>在此处，我们将从<a target="_blank" rel="noopener" href="https://www.runoob.com/cplusplus/cpp-classes-objects.html">class</a>的声明、定义、使用来入手，切实的感受 <em><strong>面向对象</strong></em> 的代码风格</p>
 <h2 id="classの定义"><a href="#classの定义" class="headerlink" title="classの定义"></a>classの定义</h2><p><a target="_blank" rel="noopener" href="https://www.runoob.com/cplusplus/cpp-classes-objects.html"><img src="https://www.runoob.com/wp-content/uploads/2015/05/cpp-classes-objects-2020-12-10-11.png" alt="菜鸟教程给出的定义结构"></a></p>
 <h3 id="类-及-类名"><a href="#类-及-类名" class="headerlink" title="类 及 类名"></a>类 及 类名</h3><p>给类取名的时候，可以参照<a target="_blank" rel="noopener" href="https://www.runoob.com/cplusplus/cpp-data-structures.html">struct</a>，命名规则和变量一致<br>类的名字以及成员变量 <em><strong>最好</strong></em> 有实际意义，例：</p>
@@ -453,7 +451,7 @@ xxx <span class="token operator">=</span> Brain<span class="token punctuation">.
 <h2 id="Controller-functions"><a href="#Controller-functions" class="headerlink" title="Controller.functions()"></a>Controller.functions()</h2><h3 id="定义-1"><a href="#定义-1" class="headerlink" title="定义"></a>定义</h3><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token comment">// robot-config.h</span>
 <span class="token keyword">extern</span> controller Controller<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p>和 <code>brain</code> 的定义一样平淡</p>
-<h3 id="按钮"><a href="#按钮" class="headerlink" title="按钮"></a>按钮</h3><p><img src="/image/01-4-2-2.jpg"><br>图中按钮可用的共有10个，分别是：<br>    - ButtonLeft<br>    - ButtonRight<br>    - ButtonUp<br>    - ButtonDown<br>    - ButtonA<br>    - ButtonB<br>    - ButtonX<br>    - ButtonY<br>    - ButtonL1<br>    - ButtonL2<br>    - ButtonR1<br>    - ButtonR2</p>
+<h3 id="按钮"><a href="#按钮" class="headerlink" title="按钮"></a>按钮</h3><p><img src="https://picdm.sunbangyan.cn/2023/11/13/968d794a5f0ca8bc9c740b824c06866b.jpg" alt="手柄正面图"><br>图中按钮可用的共有10个，分别是：<br>    - ButtonLeft<br>    - ButtonRight<br>    - ButtonUp<br>    - ButtonDown<br>    - ButtonA<br>    - ButtonB<br>    - ButtonX<br>    - ButtonY<br>    - ButtonL1<br>    - ButtonL2<br>    - ButtonR1<br>    - ButtonR2</p>
 <p>他们都属于 <code>controller</code>类中的成员类<code>button</code>，有以下成员函数：</p>
 <ul>
 <li>pressing()<br>  检查当下，如果按钮被按下则返回<code>true</code>，否则返回<code>false</code>。</li>
@@ -566,16 +564,15 @@ motor MotorRB <span class="token operator">=</span> <span class="token function"
 <h3 id="监测电机"><a href="#监测电机" class="headerlink" title="监测电机"></a>监测电机</h3><ul>
 <li><code>double position( rotationUnits units )</code><br>返回电机转过的角度<br>一般填入单位 degrees     </li>
 <li><code>void resetPosition()</code><br>重置 <code>position()</code>的返回值<br>重置需要一小段时间，重置时尽量保持电机的静止</li>
-<li><code>double temperature( temperatureUnits units );</code><br>返回电机此时的温度<br>可填入单位 摄氏度(<code>celsius</code>)     </li>
+<li><code>double temperature( temperatureUnits units )</code><br>返回电机此时的温度<br>可填入单位 摄氏度(<code>celsius</code>)     </li>
 <li>…</li>
 </ul>
-<h1 id="陀螺仪-与-自动转弯"><a href="#陀螺仪-与-自动转弯" class="headerlink" title="陀螺仪 与 自动转弯"></a>陀螺仪 与 自动转弯</h1><h2 id="声明、命名"><a href="#声明、命名" class="headerlink" title="声明、命名"></a>声明、命名</h2><pre><code>需要填入的参数仅有端口
+<h1 id="陀螺仪-与-自动转弯"><a href="#陀螺仪-与-自动转弯" class="headerlink" title="陀螺仪 与 自动转弯"></a>陀螺仪 与 自动转弯</h1><h2 id="声明、命名"><a href="#声明、命名" class="headerlink" title="声明、命名"></a>声明、命名</h2><p>需要填入的参数仅有端口</p>
 <pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token comment">// vex_imu.h</span>
 <span class="token function">inertial</span><span class="token punctuation">(</span> <span class="token keyword">int32_t</span> index<span class="token punctuation">,</span> turnType dir <span class="token operator">=</span> turnType<span class="token double-colon punctuation">::</span>right <span class="token punctuation">)</span><span class="token punctuation">;</span>  <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-声明比`motor`简单
+<p>声明比<code>motor</code>简单</p>
 <pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token comment">// robot-config.cpp</span>
 inertial ine <span class="token operator">=</span> <span class="token function">inertial</span><span class="token punctuation">(</span>PORT11<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-</code></pre>
 <h2 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h2><p>类似于<code>motor</code>中的<code>position()</code>，对陀螺仪初始化是必要的。</p>
 <pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token comment">// your_file.cpp</span>
 <span class="token keyword">void</span> <span class="token function">reset</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
@@ -705,7 +702,7 @@ digital_out <span class="token function">pne</span> <span class="token punctuati
 <blockquote>
 <p>为了方便说明，不妨假设每秒的漏水为$$10ml$$ , $$k_p&#x3D;0.8$$</p>
 </blockquote>
-<p>你还是用<code>比例算法</code>的思想去倒水<br>然而在你加水加到了$$920ml$$时，你会发现此时水位已经不再上涨<br>这是因为此时你加水的速度是<br>$$ (1000-920)\times0.8&#x3D;10 (ml) $$<br>和漏水的速度持平</p>
+<p>你还是用<code>比例算法</code>的思想去倒水<br>然而在你加水加到了$$920ml$$时，你会发现此时水位已经不再上涨<br>这是因为此时你加水的速度是<br>$$ (1000-920)\times0.8&#x3D;10 \space (ml) $$<br>和漏水的速度持平</p>
 <p>如果你可以关注到水位一直都在$$920ml$$处这个现象的话,你可以尝试根据累计水位和目标之间的偏差来计算你到底应该额外加入多少的水<br>记积分算法的输出值为<code>I</code>,那么:<br>$$ I \propto \int_{0}^{T} error·{\rm d}t $$<br>即<br>$$ I &#x3D; k_i · \int_{0}^{T} error·{\rm d}t $$<br>其中$$k_i$$为我们引入的常量<code>积分系数</code><br>$$T$$为pid算法从开始运行到当前时间的计时</p>
 <h4 id="离散化"><a href="#离散化" class="headerlink" title="离散化"></a>离散化</h4><p>显然,$$\lim_{dt \to 0^{+}}$$的情况在现实中是无法实现的,我们只能采取近似的计算方法<br>积分算法的理论计算式离散化后可以用下式计算:<br>$$ I &#x3D; k_i · \sum_{t&#x3D;0}^{T} error·\Delta t $$<br>用C++实现:</p>
 <pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp">I <span class="token operator">=</span> I <span class="token operator">+</span> ki<span class="token operator">*</span>error<span class="token operator">*</span><span class="token punctuation">(</span>time_now <span class="token operator">-</span> time_last<span class="token punctuation">)</span><span class="token punctuation">;</span>
