@@ -22,5 +22,8 @@ years:
     - title: 寒假!!!!!
       start: 02-03
       end: 02-21
+    - title: DDnet1000祭
+      start: 02-06
+      end: 02-07
       
 ---

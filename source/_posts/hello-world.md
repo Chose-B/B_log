@@ -17,6 +17,11 @@ git push "https://gitlab.com/chose_b_log/b_log.git"
 ```
 
 ---
+2024-02-07  
+DDnet 1000 分 祭  
+![1000score](/source/img/1000score.png)  
+
+---
 ## 吐槽板
 ##### 2024-2-2
 cosy所支持的$$katex$$有一个奇怪的问题:  
