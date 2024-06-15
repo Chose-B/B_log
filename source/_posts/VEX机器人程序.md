@@ -813,7 +813,23 @@ $$ output = k_p·error + k_i·\sum_{t=0}^{T}error·\Delta t + k_d·\tfrac{ \Delt
 
 # 规则类怪谈
 1. 为什么不用`git`?
-   
+   [相对来说比较简单的git概述](https://www.bilibili.com/video/BV1u94y1n73L/?spm_id_from=333.337.search-card.all.click&vd_source=b1cffe52af5f67a7819cdaa7d87b6fc9)  
+   不过和视频中有些不同的是，我们完全可以用vscode来更方便的使用git  
+   * vscode中调取git命令行  
+        现在看到vscode的右边，发现这样一个区域:  
+        ![how_to_use_git_1](/source/img/how%20to%20use%20git%20-%201%20.png)  
+        `powershell`字段表明这里的命令行显示的是windows自带的命令行内容  
+        现在点击加号，就像这样:  
+        ![how_to_use_git_2](/source/img/how%20to%20use%20git%20-%202%20.png)  
+        点击`git bash`  就调出git的命令行了  
+    * 在本地的git仓库中提交更改  
+        看到vscode页面的左边  
+        ![how_to_use_git_3](/source/img/how%20to%20use%20git%20-%203%20.png)  
+        在消息中输入代表当前版本的话  
+        ![how_to_use_git_4](/source/img/how%20to%20use%20git%20-%204%20.png)  
+        按下`ctrl+enter`或者`提交`按键就好了
+    * 
+
 
 ---
 
